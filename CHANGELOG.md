@@ -6,13 +6,20 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+## [5.0.0] - 2026-08-24
+
 ### Added
 
 - **style:** A `howto-code-in-python` skill covering Python guidance.
 
 ### Changed
 
-- **style:** Revised TypeScript guidance to prefer Zod for runtime types and voidzero ecosystem tools for testing, linting, and formatting.
+- **style:** Revised TypeScript guidance to prefer Zod for runtime types and voidzero ecosystem tools for testing, linting, and formatting. The TypeBox reference is replaced by a Zod one.
+- **repo:** Rewrote the README and every plugin README for clarity, and split the autonomous-run walkthrough out into `plugins/core/YOLOPROJECT.md`.
+
+### Removed
+
+- **style:** The `using-functional-core-imperative-shell` skill is gone. Anything that dispatched it — `style:coding-effectively`, `core:executor-task`, `core:critic-code-reviewer`, and the TypeScript guidance — no longer does.
 
 ## [4.0.1] - 2026-08-19
 
