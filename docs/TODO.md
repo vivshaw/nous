@@ -8,3 +8,4 @@
 - improve answers to "How can I use Gro?"
 - call out, "use Gro to develop Gro" in dev guide? move to CONTRIBUTING.md?
 - consider https://github.com/Rika-Labs/oxlint-standards
+- vitest + RTL guidance?
