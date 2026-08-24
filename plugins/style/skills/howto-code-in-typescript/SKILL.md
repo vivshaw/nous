@@ -887,19 +887,19 @@ function handleResult(result: Result): void {
   }
 }
 
-// GOOD: schema validation (TypeBox preferred)
-import {Type, Static} from '@sinclair/typebox';
+// GOOD: schema validation (Zod preferred)
+import * as z from 'zod';
 
-const UserSchema = Type.Object({
-  name: Type.String(),
-  email: Type.String(),
-  age: Type.Number(),
+const UserSchema = z.object({
+  name: z.string(),
+  email: z.email(),
+  age: z.number().int().nonnegative(),
 });
 
-type User = Static<typeof UserSchema>;
+type User = z.infer<typeof UserSchema>;
 
 function validateUser(data: unknown): data is User {
-  return Value.Check(UserSchema, data);
+  return UserSchema.safeParse(data).success;
 }
 ```
 
@@ -1203,34 +1203,13 @@ function createTestUser(overrides?: Partial<User>): User {
 ### Standard Stack
 
 - **Type utilities:** [type-fest](./type-fest.md) for deep operations and specialized utilities
-- **Validation:** TypeBox preferred over zod (avoid decorator-based libraries)
+- **Validation:** [zod](./zod.md) preferred (avoid decorator-based libraries)
 - **Result types:** neverthrow for functional error handling
-- **Linting:** eslint-import for import ordering
+- **Linting, Formatting, & Testing:** voidzero ecosystem: Oxlint, Oxfmt, and Vitest
 
 ### Library Selection
 
 When choosing between libraries, prefer the one without decorators.
-
-```typescript
-// AVOID: decorator-based libraries
-import {IsEmail, IsString} from 'class-validator';
-
-class CreateUserDto {
-  @IsString()
-  name: string;
-
-  @IsEmail()
-  email: string;
-}
-
-// PREFER: schema-based validation
-import {Type} from '@sinclair/typebox';
-
-const CreateUserSchema = Type.Object({
-  name: Type.String(),
-  email: Type.String({format: 'email'}),
-});
-```
 
 ## Documentation
 
@@ -1595,4 +1574,4 @@ Refactor when you see:
 
 For comprehensive type-fest utilities documentation, see [type-fest.md](./type-fest.md).
 
-For comprehensive TypeBox validator documentation, see [typebox.md](./typebox.md). Please note that we generally use AJV as the canonical validator, but TypeBox is the schema generator.
+For comprehensive Zod documentation, see [zod.md](./zod.md).
