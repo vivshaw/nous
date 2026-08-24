@@ -8,5 +8,4 @@
 - improve answers to "How can I use Gro?"
 - style updates:
   - reference arch books I like?
-  - Python guidance
 - call out, "use Gro to develop Gro" in dev guide? move to CONTRIBUTING.md?

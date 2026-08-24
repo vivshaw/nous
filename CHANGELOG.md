@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Added
+
+- **style:** A `howto-code-in-python` skill covering Python guidance.
+
 ### Changed
 
 - **style:** Revised TypeScript guidance to prefer Zod for runtime types and voidzero ecosystem tools for testing, linting, and formatting.

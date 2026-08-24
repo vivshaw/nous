@@ -16,6 +16,8 @@ user-invocable: false
 **When applicable:**
 - `style:howto-code-in-typescript` - TypeScript code
 - `style:programming-in-react` - React frontend code
+- `style:howto-code-in-go` - Go code
+- `style:howto-code-in-python` - Python code
 - `style:howto-code-in-rust` - Rust code
 - `style:howto-develop-with-postgres` - PostgreSQL database code
 - `style:writing-good-tests` - Writing or reviewing tests

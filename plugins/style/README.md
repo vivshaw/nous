@@ -37,6 +37,7 @@ I prefer:
 **language-specific skills:**
 
 - `style:howto-code-in-go`
+- `style:howto-code-in-python`
 - `style:howto-code-in-rust`
 - `style:howto-code-in-typescript`
 - `style:programming-in-react`
