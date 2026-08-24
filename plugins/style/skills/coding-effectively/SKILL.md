@@ -9,7 +9,6 @@ user-invocable: false
 ## Sub-Skills
 
 **Always:**
-- `style:using-functional-core-imperative-shell` - Separate pure logic from side effects
 - `style:defense-in-depth` - Validate at every layer data passes through
 - `style:writing-comments` - Writing useful code comments
 - `style:writing-git-commits` - Committing changes

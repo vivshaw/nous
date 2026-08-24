@@ -48,7 +48,6 @@ No production code without a failing test first.
 
 - `style:coding-effectively`: All code patterns and standards
 - Language skills: TypeScript conventions, React patterns, etc.
-- `style:using-functional-core-imperative-shell`: FCIS pattern enforcement
 - Task-specific skills as relevant
 
 ### Step 4: Verify Completion
