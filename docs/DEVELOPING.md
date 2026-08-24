@@ -1,37 +1,36 @@
-# developing gro
+# Developing Gro
 
-contributor guide for Gro, viv shaw's Claude Code plugin marketplace.
+Are you interested in contributing to Gro, or developing your own fork? This document will provide what you need.
 
-## developing hooks
-
-some Gro features are implemented as hooks. most of these hooks live in `plugins/extra`; workflow-specific ones live in `plugins/core/hooks`. at this time, the preferred language for hooks is Python. shell is also acceptable (for extremely simple scripts only).
-
-### prerequisites
+## Prerequisites
 
 - [Nix](https://nixos.org/download) (with flakes enabled)
 - [direnv](https://direnv.net/) (optional, for auto-activation)
 
-everything else (Python, uv, ruff, mypy, pre-commit, git) is pinned in the flake.
+All other developer tools you'll need are pinned in the Nix flake.
 
-### up and running
+### Up and Running
 
-if you have direnv active, you will be prompted to `direnv allow` upon `cd`ing in. if you do not, use `nix develop` to enter a one-off Nix shell.
+If you have direnv active, you will be prompted to `direnv allow` upon `cd`ing in. If you do not, use `nix develop` to enter a one-off Nix shell. Once you are in the shell, run `pre-commit install` to activate Git hooks.
 
-once you are in the shell, run `pre-commit install` to activate Git hooks.
+### Developing Hooks
 
-### Python toolchain
+Some Gro features are implemented as hooks. The hooks relevant to the core workflow live in [Gro Core](../plugins/core/). Assorted others live in [Gro Extra](../plugins/extra/). At this time, the preferred language for hooks is Python. Shell is also acceptable, but only for extremely simple scripts only.
 
-dev deps are managed by [uv](https://docs.astral.sh/uv/).
+If written in Python, you should include tests for your hook implementation.
 
-| command | what it does |
+### Python Toolchain
+
+Dev deps are managed by [uv](https://docs.astral.sh/uv/).
+
+| Command | What it does |
 |---|---|
-| `uv sync` | install dev deps into `.venv/` |
 | `uv run pytest` | run the hook tests |
 | `uv run ruff check plugins/` | lint |
 | `uv run ruff format plugins/` | format |
 | `uv run mypy` | typecheck |
 
-config lives in:
+Config lives in:
 
 - `flake.nix`: pinned tool versions
 - `pyproject.toml`: uv deps, ruff / mypy / pytest config

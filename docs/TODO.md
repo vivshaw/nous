@@ -1,5 +1,12 @@
 - multiharnessify: [MULTIHARNESS.md](MULTIHARNESS.md)
 - instead of inline python, maybe distribute a cli?
 - add guidance: fork gro! your org has a PRD or pitch doc format? use it in design-specs. your org uses Linear? use that in implementation-plans. prefer cutting small PRs per-task in projects? say so.
-- simplify planning
-  - make project/milestone/task oriented? one markdown file per task? reference Linear's flow?
+- use git worktrees, if it doesn't work right already.
+- support Linear integration?
+- remove slash command from executing-autonomously?
+- weave principles into READMEs for subskills?
+- improve answers to "How can I use Gro?"
+- style updates:
+  - Zod over TypeBox
+  - reference arch books I like?
+- call out, "use Gro to develop Gro" in dev guide? move to CONTRIBUTING.md?

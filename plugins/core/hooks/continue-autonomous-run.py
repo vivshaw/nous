@@ -150,8 +150,9 @@ def main() -> None:
     except json.JSONDecodeError:
         sys.exit(0)
 
-    # The harness sets this once it is already replaying a Stop-hook
-    # continuation. Re-blocking there would loop forever.
+    # Claude Code sets this on a stop that happens inside a hook-driven
+    # continuation. Staying silent keeps the hook from blocking a turn it
+    # created; the continuation cap and the stall limit are what bound the run.
     if event.get("stop_hook_active"):
         sys.exit(0)
 

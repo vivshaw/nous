@@ -148,7 +148,7 @@ def test_inactive_status_is_silent(tmp_path: Path, status: str) -> None:
 
 
 def test_stop_hook_active_is_silent(tmp_path: Path) -> None:
-    """Guards against the hook re-entering its own continuation."""
+    """The hook stays silent on a stop Claude Code marks as hook-driven."""
     write_run(tmp_path)
     write_plan(tmp_path, "- [ ] ### Task 1: Thing\n")
     assert run_hook(tmp_path, stop_hook_active=True) is None
