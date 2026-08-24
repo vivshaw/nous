@@ -15,6 +15,11 @@ I prefer:
 - Strict typechecking & linting wherever possible.
 - Concise, direct, relevant, and accurate Git commits (in [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) format), changelog entries (in [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) format), and code comments.
 
+Resources worth considering:
+
+- Hickey's [Simple Made Easy](https://www.youtube.com/watch?v=SxdOUGdseq4)
+- Osterhout's [APOSD](https://web.stanford.edu/~ouster/cgi-bin/aposd.php)
+
 ## What's Inside
 
 ### Skills

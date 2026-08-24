@@ -6,6 +6,5 @@
 - remove slash command from executing-autonomously?
 - weave principles into READMEs for subskills?
 - improve answers to "How can I use Gro?"
-- style updates:
-  - reference arch books I like?
 - call out, "use Gro to develop Gro" in dev guide? move to CONTRIBUTING.md?
+- consider https://github.com/Rika-Labs/oxlint-standards
