@@ -66,7 +66,6 @@ Verify the code actually works. Run these commands and examine the output:
 
 Apply `style:coding-effectively`:
 - Apply all patterns and standards from that skill
-- Check FCIS separation (Functional Core / Imperative Shell)
 - Verify file pattern comments present
 
 For language-specific skills:
@@ -82,7 +81,6 @@ For language-specific skills:
 | Error handling | All external calls have error handling | ✓ |
 | Test coverage | All public functions tested | ✓ |
 | Security | Input validation, no injection vulnerabilities | ✓ |
-| FCIS pattern | Files marked with pattern comment | ✓ |
 
 ### Step 4: Check Test Coverage and Quality
 
@@ -115,7 +113,6 @@ Apply `style:writing-good-tests` checks (via `style:coding-effectively`):
 - Missing tests for new functionality
 - Testing anti-patterns (testing mocks)
 - Deviations from plan without justification
-- FCIS violations (mixed patterns without explanation)
 
 **Important (fix before approval):**
 - Code organization issues

@@ -1,6 +1,6 @@
 ---
 name: howto-code-in-typescript
-description: Use when writing TypeScript code, reviewing TS implementations, or making decisions about type declarations, function styles, or naming conventions - comprehensive house style covering type vs interface rules, function declarations, FCIS integration, immutability patterns, and type safety enforcement
+description: Use when writing TypeScript code, reviewing TS implementations, or making decisions about type declarations, function styles, or naming conventions - comprehensive house style covering type vs interface rules, function declarations, immutability patterns, and type safety enforcement
 user-invocable: false
 ---
 
@@ -8,13 +8,13 @@ user-invocable: false
 
 ## Overview
 
-Comprehensive TypeScript coding standards emphasizing type safety, immutability, and integration with Functional Core, Imperative Shell (FCIS) pattern.
+Comprehensive TypeScript coding standards emphasizing type safety, immutability, and simplicity.
 
 **Core principles:**
 - Types as documentation and constraints
 - Immutability by default prevents bugs
 - Explicit over implicit (especially in function signatures)
-- Functional Core returns Results, Imperative Shell may throw
+- Prefer returning and handling errors over throwing where possible
 - Configuration over decoration/magic
 
 ## Quick Self-Check (Use Under Pressure)
@@ -180,7 +180,7 @@ if (result.isOk()) {
 }
 ```
 
-**Rule:** Functional Core functions should return `Result<T, E>` types. Imperative Shell functions may throw exceptions for HTTP errors and similar.
+When possible, functions should return `Result<T, E>` types.
 
 ## Functions
 
@@ -1075,79 +1075,6 @@ utils.baz();
 ```
 
 **Note:** eslint-import plugin should be configured to enforce import ordering.
-
-## FCIS Integration
-
-**Note:** `// pattern:` comments apply only to files with runtime behavior. Type-only files, constants/enum files, barrel re-exports, tests, and generated files are exempt from classification.
-
-### Functional Core Patterns
-
-**Return Result types. Never throw exceptions. Pure functions only.**
-
-```typescript
-// pattern: Functional Core
-import {Result, ok, err} from 'neverthrow';
-
-type ValidationError = {
-  field: string;
-  message: string;
-};
-
-// GOOD: returns Result, pure function
-function validateUser(
-  data: Readonly<UserData>,
-): Result<ValidUser, ValidationError> {
-  if (!data.email) {
-    return err({field: 'email', message: 'Email required'});
-  }
-  if (!data.name) {
-    return err({field: 'name', message: 'Name required'});
-  }
-  return ok({...data, validated: true});
-}
-
-// GOOD: transformation with Result
-function transformUser(
-  user: Readonly<User>,
-  config: Readonly<TransformConfig>,
-): Result<TransformedUser, TransformError> {
-  // pure transformation logic
-  return ok(transformed);
-}
-```
-
-### Imperative Shell Patterns
-
-**May throw exceptions. Orchestrate I/O. Minimal business logic.**
-
-```typescript
-// pattern: Imperative Shell
-import {HttpException} from './exceptions';
-
-class UserController {
-  constructor(
-    private readonly userRepo: UserRepository,
-    private readonly logger: Logger,
-  ) {}
-
-  // GOOD: orchestrates I/O, delegates to Core, may throw
-  async createUser(data: UserData): Promise<User> {
-    this.logger.info('Creating user', {email: data.email});
-
-    // Delegate validation to Functional Core
-    const validationResult = validateUser(data);
-    if (validationResult.isErr()) {
-      throw new HttpException(400, validationResult.error.message);
-    }
-
-    // I/O operation
-    const user = await this.userRepo.create(validationResult.value);
-
-    this.logger.info('User created', {id: user.id});
-    return user;
-  }
-}
-```
 
 ## Compiler Configuration
 
