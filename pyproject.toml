@@ -7,6 +7,7 @@ requires-python = ">=3.11"
 [dependency-groups]
 dev = [
     "mypy>=1.13",
+    "playwright>=1.62.0",
     "pytest>=8.3",
     "ruff>=0.8",
 ]
@@ -34,12 +35,21 @@ select = [
 
 [tool.mypy]
 python_version = "3.11"
-files = ["plugins/core/hooks", "plugins/extra/hooks"]
+files = ["plugins/core/hooks", "plugins/extra/hooks", "plugins/research/skills", "tools"]
 warn_redundant_casts = true
 warn_unused_ignores = true
 warn_unreachable = true
 check_untyped_defs = true
-exclude = ["plugins/(core|extra)/hooks/test_.*\\.py$"]
+exclude = [
+    "plugins/(core|extra)/hooks/test_.*\\.py$",
+    "plugins/research/.*/test_.*\\.py$",
+    "tools/test_.*\\.py$",
+]
 
 [tool.pytest.ini_options]
-testpaths = ["plugins/core/hooks", "plugins/extra/hooks"]
+testpaths = [
+    "plugins/core/hooks",
+    "plugins/extra/hooks",
+    "plugins/research/skills/visualizing-data/scripts",
+    "tools",
+]

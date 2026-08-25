@@ -25,9 +25,10 @@ Dev deps are managed by [uv](https://docs.astral.sh/uv/).
 
 | Command | What it does |
 |---|---|
-| `uv run pytest` | run the hook tests |
-| `uv run ruff check plugins/` | lint |
-| `uv run ruff format plugins/` | format |
+| `uv sync --all-groups` | create or repair `.venv` from `uv.lock` |
+| `uv run pytest` | run every test |
+| `uv run ruff check plugins/ tools/` | lint |
+| `uv run ruff format plugins/ tools/` | format |
 | `uv run mypy` | typecheck |
 
 Config lives in:
@@ -35,3 +36,5 @@ Config lives in:
 - `flake.nix`: pinned tool versions
 - `pyproject.toml`: uv deps, ruff / mypy / pytest config
 - `.pre-commit-config.yaml`: git hook config
+
+Some checks require a browser. You can supply one by running `uv run playwright install chromium`. If you don't, the checks will instruct you to do so when you run them.

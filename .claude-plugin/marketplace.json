@@ -31,6 +31,12 @@
       "source": "./plugins/style",
       "description": "viv shaw's house style: coding standards & language-specific patterns",
       "version": "5.0.0"
+    },
+    {
+      "name": "research",
+      "source": "./plugins/research",
+      "description": "Skills for doing research and presenting data",
+      "version": "5.0.0"
     }
   ]
 }

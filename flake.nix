@@ -1,5 +1,5 @@
 {
-  # at the moment, used for testing the hook scripts in `plugins/extra/hooks/`
+  # python toolchain for the hook scripts, and tool scripts in `tools/`
   description = "python toolchain for gro";
 
   inputs = {

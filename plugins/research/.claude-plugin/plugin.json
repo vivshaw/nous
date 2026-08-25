@@ -1,0 +1,9 @@
+{
+  "name": "research",
+  "version": "5.0.0",
+  "description": "Skills for doing research and presenting data",
+  "author": {
+    "name": "viv shaw"
+  },
+  "license": "CC-BY-SA-4.0"
+}

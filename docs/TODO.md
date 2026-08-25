@@ -9,3 +9,16 @@
 - call out, "use Gro to develop Gro" in dev guide? move to CONTRIBUTING.md?
 - consider https://github.com/Rika-Labs/oxlint-standards
 - vitest + RTL guidance?
+- is neverthrow actually worth it?
+- ensure iterative review uses the same prompt each generation
+- better names in marketplace
+- absolutely forbid any
+- make sure subagents get writing comments skill?
+- apply concise + simple technical english?
+- deslop:
+  - make it a command? agent shouldn't use this on its own
+  - prose pass: checklist for every file. if code file, comments skill. if md, writing skills
+  - static pass: ratchet up linter, typechecker, formatter to max. circular dep checker. knip. then fix anything exposed.
+  - tests pass: add unit tests if missing.
+  - code pass: checklist for every file. 
+  - arch pass: duplication, complexity, idiomatic code, modularity. ruthlessly pursue simplicity, directness, and concision above all else. use the Gro code review skill

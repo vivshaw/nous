@@ -25,7 +25,7 @@ At the moment, Gro works best in Claude Code. Support for Codex and OpenCode is 
 ```
 /plugin marketplace add vivshaw/gro
 /plugin install core@gro
-# and style@gro, extra@gro, meta@gro
+# and style@gro, extra@gro, meta@gro, research@gro
 ```
 
 ### Codex
@@ -47,6 +47,7 @@ Gro is built around agent-driven skill invocation. You do not generally need to 
 - **[Core](plugins/core/README.md):** An opinionated Research -> Plan -> Implement -> Review workflow
 - **[Meta](plugins/meta/README.md):** Skills for working with agents, skills, and context
 - **[Style](plugins/style/README.md):** Coding standards & language-specific patterns, covering TypeScript, Go, and Rust
+- **[Research](plugins/research/README.md):** Skills for doing research and presenting data
 - **[Extra](plugins/extra/README.md):** Miscellaneous agent hooks
 
 Each sub-plugin's README provides more details on what exactly it does and how.
