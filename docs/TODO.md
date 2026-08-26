@@ -5,7 +5,6 @@
 - support Linear integration?
 - remove slash command from executing-autonomously?
 - weave principles into READMEs for subskills?
-- improve answers to "How can I use Gro?"
 - call out, "use Gro to develop Gro" in dev guide? move to CONTRIBUTING.md?
 - ensure iterative review uses the same prompt each generation
 - better names in marketplace

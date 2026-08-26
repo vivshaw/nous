@@ -32,7 +32,7 @@ Gro Core is the heart of Gro. This plugin contains Gro's core Research -> Plan -
 
 **Orientation:**
 
-- `core:using-gro`: Teaches agents how to find and use Gro's skills.
+- `core:using-gro`: Teaches agents how to find, use, and explain Gro's skills
 - `core:using-generic-agents`: Teaches agents when to dispatch generic subagents, and which to pick.
 
 **Exploration & Research Helpers:**

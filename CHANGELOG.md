@@ -14,6 +14,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ### Changed
 
+- **core:** `core:using-gro` now explicitly answers "how do I use Gro?"
 - **style:** TypeScript tooling guidance updated, including stricter static analysis & TypeScript 7.
 
 ### Fixed

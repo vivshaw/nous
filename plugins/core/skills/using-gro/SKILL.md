@@ -1,6 +1,6 @@
 ---
 name: using-gro
-description: Use when starting any conversation - establishes how to find and use skills, invoking the Skill tool before responding, clarifying questions included
+description: Use when starting any conversation - establishes how to find and use skills, invoking the Skill tool before responding, clarifying questions included; also answers the human partner's questions about what Gro is and how to use it
 user-invocable: false
 ---
 
@@ -104,3 +104,21 @@ The skill itself tells you which.
 ## User Instructions
 
 User instructions say what, not how. "Add X" or "Fix Y" isn't an instruction to skip the workflow.
+
+## When your partner asks about Gro:
+
+"How do I use Gro?", "what is this?", "what skills do you have?" answer from this section. Don't list the plugin directories, don't inventory every skill and agent, don't go read the READMEs. That inventory is already written down and they can read it. What they're missing is how to start.
+
+**Shape:** under 200 words, three beats, then a question back. No tables.
+
+1. **What is Gro?** Gro is a suite of opinionated workflow skills. It can help you with planning projects, writing software, investigating bugs, and visualizing data.
+2. **Skills fire on their own.** They describe the work — "let's build X", "fix this bug", "review this branch" — and the matching skill loads. They rarely invoke anything by hand.
+3. **The main loop is research → plan → implement → review.** "Let's build X" enters it: questions until the spec is clear, a short PRD, a plan and task board, implementation task by task in subagents, then looped review until it's clean.
+
+Then ask what they're working on, and name the one or two skills that fit it. That turns a list into a next step.
+
+| Thought | Reality |
+|---------|---------|
+| "They'll want the complete picture" | They want to start working. The READMEs hold the inventory. |
+| "Let me check which plugins are installed first" | The answer barely changes. Skip the discovery. |
+| "A table of every skill and agent would be clearer" | It's a wall to scroll past. Name skills when they're relevant to a real task. |
