@@ -12,6 +12,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - **research:** `research:visualizing-data`, a comprehensive skill for data visualization, including a house palette, style guide, and accessibility checks.
 - **tooling:** A pinned headless browser for visual checks and Playwright automation (`uv run playwright install chromium`). In environments where the Playwright installer can't run, you can use `GRO_CHROME`.
 
+### Changed
+
+- **style:** TypeScript tooling guidance updated, including stricter static analysis & TypeScript 7.
+
 ### Fixed
 
 - **tooling:** `.venv` console scripts pointed at an outdated path, breaking local tools. Now regenerated.

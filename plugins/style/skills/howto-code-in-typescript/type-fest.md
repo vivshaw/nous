@@ -1,10 +1,9 @@
-# type-fest - TypeScript Types Reference
+# `type-fest` Reference: Utility Types
 
 ## Installation
 ```sh
 npm install type-fest
 ```
-Requires TypeScript >=5.9, ESM, strict mode.
 
 ## Usage
 ```ts

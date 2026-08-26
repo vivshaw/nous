@@ -1,6 +1,6 @@
 ---
 name: howto-code-in-typescript
-description: Use when writing TypeScript code, reviewing TS implementations, or making decisions about type declarations, function styles, or naming conventions - comprehensive house style covering type vs interface rules, function declarations, immutability patterns, and type safety enforcement
+description: Use when writing TypeScript code, reviewing TS implementations, or making decisions about type declarations, function styles, or naming conventions - comprehensive house style covering type vs interface rules, function declarations, immutability patterns, type safety enforcement, and the static analysis toolchain (tsconfig, Oxlint, Oxfmt, knip, dpdm)
 user-invocable: false
 ---
 
@@ -764,7 +764,7 @@ enum Status {
 
 ### Never Use 'any'
 
-**Always use `unknown` for truly unknown data. If a library forces `any`, escalate to operator for replacement.**
+**Always use `unknown` for truly unknown data. If a library forces `any`, escalate to your user.**
 
 ```typescript
 // GOOD: unknown with type guard
@@ -1032,20 +1032,6 @@ export default function processUser(user: User): ProcessedUser {
 }
 ```
 
-### Barrel Exports
-
-**Use index.ts to re-export from directories.**
-
-```typescript
-// src/users/index.ts
-export * from './user-service';
-export * from './user-repository';
-export * from './types';
-
-// consumers can import from directory
-import {UserService, type User} from './users';
-```
-
 ### Import Organization
 
 **Group by source type, alphabetize within groups. Use destructuring for fewer than 3 imports.**
@@ -1074,32 +1060,7 @@ utils.bar();
 utils.baz();
 ```
 
-**Note:** eslint-import plugin should be configured to enforce import ordering.
-
-## Compiler Configuration
-
-### Strictness
-
-**Full strict mode plus additional checks.**
-
-```json
-{
-  "compilerOptions": {
-    "strict": true,
-    "noUncheckedIndexedAccess": true,
-    "noPropertyAccessFromIndexSignature": true,
-    "noImplicitAny": true,
-    "strictNullChecks": true,
-    "strictFunctionTypes": true,
-    "strictBindCallApply": true,
-    "strictPropertyInitialization": true,
-    "noImplicitThis": true,
-    "alwaysStrict": true
-  }
-}
-```
-
-**All strict options are mandatory. No exceptions.**
+**Note:** Oxfmt sorts imports into exactly these groups. Do not hand-maintain the order. Configure it once per [static-analysis.md](./static-analysis.md) and let the formatter own it.
 
 ## Testing
 
@@ -1131,12 +1092,22 @@ function createTestUser(overrides?: Partial<User>): User {
 
 - **Type utilities:** [type-fest](./type-fest.md) for deep operations and specialized utilities
 - **Validation:** [zod](./zod.md) preferred (avoid decorator-based libraries)
-- **Result types:** neverthrow for functional error handling
-- **Linting, Formatting, & Testing:** voidzero ecosystem: Oxlint, Oxfmt, and Vitest
+- **Linting & Formatting:** voidzero ecosystem: Oxlint, Oxfmt
+- **Other static analysis:** knip for dead code elimination, dpdm for cyclical import prevention
+- **Testing:** Vitest for unit tests, Playwright for browser tests
+
+Do not improvise config for any of the above. [static-analysis.md](./static-analysis.md) explains the standard `tsconfig.json`, `.oxlintrc.json`, `.oxfmtrc.json`, `knip.json`, and `dpdm.config.ts`, plus the rationale for every non-obvious setting.
+
+Read it before you:
+
+- Set up a new TypeScript app or package
+- Add, remove, or reconfigure any of these tools
+- Turn a rule off, downgrade it, or add an inline suppression
+- Ratchet strictness on an existing codebase
 
 ### Library Selection
 
-When choosing between libraries, prefer the one without decorators.
+Prefer libraries without decorators.
 
 ## Documentation
 
@@ -1470,34 +1441,9 @@ function safeGetValue(obj: Record<string, unknown>, key: string): unknown {
 | Nested regex quantifiers `(a+)+` | Refactor to avoid ReDoS |
 | `Promise.all` when partial results acceptable | Use `Promise.allSettled` |
 
-## Red Flags
-
-Refactor when you see:
-
-- `any` keyword in business logic
-- `interface` for data shapes (not class contracts)
-- JavaScript `number` for money, currency, or financial calculations
-- `T[]` instead of `Array<T>` syntax
-- Decorators in library selection
-- Type assertions without explanatory comments
-- Missing return types on exported functions
-- Mutable class fields (should be `readonly`)
-- `undefined` used for explicitly absent values
-- Enums instead of string literal unions
-- Default exports
-- Functions with 4+ positional parameters
-- Complex inline types used repeatedly
-- Async functions that don't perform I/O
-- Error messages in Title Case
-- `==` instead of `===`
-- `eval()` or `new Function()` with any dynamic input
-- Regex patterns with nested quantifiers `(x+)+` or `(x|x)+`
-- `Object.assign()` or spread with user-controlled objects
-- `parseInt()` without explicit radix
-- `.sort()` on numbers without comparator function
-- `JSON.parse()` on data with large integer IDs (use string IDs)
-
 ## Reference
+
+For toolchain configuration — TypeScript compiler options, Oxlint rules, Oxfmt, knip, and dpdm — see [static-analysis.md](./static-analysis.md).
 
 For comprehensive type-fest utilities documentation, see [type-fest.md](./type-fest.md).
 

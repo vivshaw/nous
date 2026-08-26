@@ -1,4 +1,4 @@
-# Zod - Schema Validation and Type Inference
+# `Zod` Reference: Schema Validation and Type Inference
 
 Runtime schema validation that infers static TypeScript types from a single declaration.
 
