@@ -1,9 +1,9 @@
 {
   "name": "meta",
   "version": "5.0.0",
-  "description": "let's get strange-loopy: agent skills for working with agents and skills",
+  "description": "Skills for working with agents, skills, and context",
   "author": {
-    "name": "viv shaw"
+    "name": "vivshaw"
   },
   "license": "CC-BY-SA-4.0"
 }

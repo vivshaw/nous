@@ -46,12 +46,16 @@ Gro is built around agent-driven skill invocation. You do not generally need to 
 
 - **[Core](plugins/core/README.md):** An opinionated Research -> Plan -> Implement -> Review workflow
 - **[Meta](plugins/meta/README.md):** Skills for working with agents, skills, and context
-- **[Style](plugins/style/README.md):** Coding standards & language-specific patterns, covering TypeScript, Go, and Rust
-- **[Research](plugins/research/README.md):** Skills for doing research and presenting data
+- **[Style](plugins/style/README.md):** Coding standards & language-specific patterns, covering TypeScript, Go, Python, and Rust
+- **[Research](plugins/research/README.md):** Skills for doing research and data science tasks, including data visualizion
 - **[Extra](plugins/extra/README.md):** Miscellaneous agent hooks
 
 Each sub-plugin's README provides more details on what exactly it does and how.
 
 ## Development
 
-See [docs/DEVELOPING.md](docs/DEVELOPING.md).
+See [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md).
+
+## You should remix Gro!
+
+One of the best ways to make Gro (or any skill suite) work better for you is to tune it to your own workflows. Do you already have a PRD or pitch doc spec you'd like to use? Would you rather plug your agent into Jira than use text files for issue tracking? Do you prefer Zig over Rust? Would you prefer to incrementally cut PRs for each task? All totally fine! Fork this plugin and remix it into something that fits you like a glove. This is how Gro itself was originally created. Further, Gro provides skills to help you edit and maintain a skill suite. So even if you're not yet an expert, your agent can help you tweak Gro. See [the contributing guide](docs/CONTRIBUTING.md) for info that might make the process smoother.

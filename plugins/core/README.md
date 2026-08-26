@@ -75,6 +75,13 @@ Yoloproject is an end-to-end autonomous workflow. You work with the agent to def
 
 For lower-level details, see [the YOLOPROJECT doc](./YOLOPROJECT.md).
 
-## credits
+## Principles
+
+- Orchestration and planning in the main session, execution and review in subagents.
+- Write lightweight planning documents. Avoid writing code in the planning phase. Focus on requirements.
+- Write tests, then write code. Verify that the tests can actually fail.
+- Use iterative review loops, with the reviewer and fixer agents sharing no context.
+
+## Credits
 
 Gro Core is derived from [obra/superpowers](https://github.com/obra/superpowers) (MIT, © Jesse Vincent) and [ed3dai/ed3d-plugins](https://github.com/ed3dai/ed3d-plugins) (CC BY-SA 4.0, © Ed Ropple). See `LICENSE.superpowers` & `LICENSE.ed3d-plugins`.

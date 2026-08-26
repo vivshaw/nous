@@ -1,9 +1,9 @@
 {
   "name": "research",
   "version": "5.0.0",
-  "description": "Skills for doing research and presenting data",
+  "description": "Skills for doing research and data science tasks, including data visualizion",
   "author": {
-    "name": "viv shaw"
+    "name": "vivshaw"
   },
   "license": "CC-BY-SA-4.0"
 }

@@ -38,3 +38,7 @@ Config lives in:
 - `.pre-commit-config.yaml`: git hook config
 
 Some checks require a browser. You can supply one by running `uv run playwright install chromium`. If you don't, the checks will instruct you to do so when you run them.
+
+## Use Gro to develop Gro!
+
+Gro Meta contains a package of skills to develop effective agents and skills. They can help you write clear and effective skills, pressure-test skills, and avoid ineffective token-wasting patterns.

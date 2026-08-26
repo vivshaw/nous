@@ -1,13 +1,8 @@
 - multiharnessify: [MULTIHARNESS.md](MULTIHARNESS.md)
 - instead of inline python, maybe distribute a cli?
-- add guidance: fork gro! your org has a PRD or pitch doc format? use it in design-specs. your org uses Linear? use that in implementation-plans. prefer cutting small PRs per-task in projects? say so.
 - use git worktrees, if it doesn't work right already.
 - support Linear integration?
 - remove slash command from executing-autonomously?
-- weave principles into READMEs for subskills?
-- call out, "use Gro to develop Gro" in dev guide? move to CONTRIBUTING.md?
-- ensure iterative review uses the same prompt each generation
-- better names in marketplace
 - make sure subagents get writing comments skill?
 - apply concise + simple technical english?
 - deslop:
@@ -17,3 +12,5 @@
   - tests pass: add unit tests if missing.
   - code pass: checklist for every file. 
   - arch pass: duplication, complexity, idiomatic code, modularity. ruthlessly pursue simplicity, directness, and concision above all else. use the Gro code review skill
+- batch reviews? always include instructions never to trim scope? ensure iterative review uses the same prompt each generation?
+- further principles/You might like if... rework

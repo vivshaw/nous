@@ -68,7 +68,7 @@ Use gro to develop gro! The `meta` plugin contains the skills you need to work e
 
 ### Python toolchain
 
-The Python hook scripts and tools have a Nix & uv toolchain wired up at the repo root. See [docs/DEVELOPING.md](docs/DEVELOPING.md) for the full setup and command reference. After modifying either, run `uv run pytest` before committing.
+The Python hook scripts and tools have a Nix & uv toolchain wired up at the repo root. See [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md) for the full setup and command reference. After modifying either, run `uv run pytest` before committing.
 
 ## Adding things
 

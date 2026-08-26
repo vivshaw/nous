@@ -1,9 +1,9 @@
 {
   "name": "style",
   "version": "5.0.0",
-  "description": "viv shaw's house style: coding standards & language-specific patterns",
+  "description": "Coding standards & language-specific patterns, covering TypeScript, Go, Python, and Rust",
   "author": {
-    "name": "viv shaw"
+    "name": "vivshaw"
   },
   "license": "CC-BY-SA-4.0"
 }

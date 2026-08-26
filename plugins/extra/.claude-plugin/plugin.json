@@ -1,9 +1,9 @@
 {
   "name": "extra",
   "version": "5.0.0",
-  "description": "automated good habits: secret-leak prevention, sensitive-file edit guards, doc-update reminders, skill-reinforcement nudges",
+  "description": "Miscellaneous agent hooks",
   "author": {
-    "name": "viv shaw"
+    "name": "vivshaw"
   },
   "license": "CC-BY-SA-4.0"
 }

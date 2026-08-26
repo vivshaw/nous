@@ -1,41 +1,41 @@
 {
   "name": "gro",
   "owner": {
-    "name": "viv shaw"
+    "name": "vivshaw"
   },
   "metadata": {
-    "description": "gro, viv shaw's agent skills setup",
+    "description": "Gro, vivshaw's workflow skill suite",
     "version": "5.0.0"
   },
   "plugins": [
     {
       "name": "core",
       "source": "./plugins/core",
-      "description": "the core toolkit: research -> plan -> implement -> review workflow, the agent menagerie, and prose tools",
-      "version": "5.0.0"
-    },
-    {
-      "name": "meta",
-      "source": "./plugins/meta",
-      "description": "let's get strange-loopy: agent skills for working with agents and skills",
+      "description": "An opinionated Research -> Plan -> Implement -> Review workflow",
       "version": "5.0.0"
     },
     {
       "name": "extra",
       "source": "./plugins/extra",
-      "description": "automated good habits: secret-leak prevention, sensitive-file edit guards, doc-update reminders, skill-reinforcement nudges",
+      "description": "Miscellaneous agent hooks",
       "version": "5.0.0"
     },
     {
-      "name": "style",
-      "source": "./plugins/style",
-      "description": "viv shaw's house style: coding standards & language-specific patterns",
+      "name": "meta",
+      "source": "./plugins/meta",
+      "description": "Skills for working with agents, skills, and context",
       "version": "5.0.0"
     },
     {
       "name": "research",
       "source": "./plugins/research",
-      "description": "Skills for doing research and presenting data",
+      "description": "Skills for doing research and data science tasks, including data visualizion",
+      "version": "5.0.0"
+    },
+    {
+      "name": "style",
+      "source": "./plugins/style",
+      "description": "Coding standards & language-specific patterns, covering TypeScript, Go, Python, and Rust",
       "version": "5.0.0"
     }
   ]

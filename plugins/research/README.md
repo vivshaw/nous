@@ -2,10 +2,6 @@
 
 Gro Research is a package of skills to assist with research and data science tasks. Currently, only data visualization is covered.
 
-## Principles
-
-- You, the human, do the thinking and writing. The agent is a helper, not a replacement.
-
 ## What's Inside
 
 ### Skills
@@ -15,6 +11,10 @@ Gro Research is a package of skills to assist with research and data science tas
 ### Assets
 
 [`skills/visualizing-data/assets/swatches.html`](./skills/visualizing-data/assets/swatches.html) is a visual reference that you can use to understand the visual style. Your agent can use as a reference too.
+
+## Principles
+
+- You, the human, do the thinking and writing. The agent is a helper, not a replacement.
 
 ## Credits
 

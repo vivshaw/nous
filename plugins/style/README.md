@@ -2,24 +2,6 @@
 
 Gro Style is my guidance for agents to write tidy, legible, and correct code in the style that I expect.
 
-## Principles
-
-I prefer:
-
-- Idiomatic code over uniqueness.
-- Correctness over convenience.
-- Concreteness over abstraction.
-- Automated formatting over bespoke style tweaks.
-- Removing accidental complexity wherever possible.
-- Modular code with clear boundaries.
-- Strict typechecking & linting wherever possible.
-- Concise, direct, relevant, and accurate Git commits (in [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) format), changelog entries (in [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) format), and code comments.
-
-Resources worth considering:
-
-- Hickey's [Simple Made Easy](https://www.youtube.com/watch?v=SxdOUGdseq4)
-- Osterhout's [APOSD](https://web.stanford.edu/~ouster/cgi-bin/aposd.php)
-
 ## What's Inside
 
 ### Skills
@@ -47,6 +29,25 @@ Resources worth considering:
 - `style:howto-code-in-typescript`
 - `style:programming-in-react`
 - `style:howto-develop-with-postgres`
+
+## Principles
+
+I prefer:
+
+- Idiomatic code over uniqueness.
+- Correctness over convenience.
+- Concreteness over abstraction.
+- Removing accidental complexity wherever possible.
+- Modular code with clear boundaries.
+- Automated formatting over bespoke style tweaks.
+- Strict typechecking & linting wherever possible.
+- Concise, direct, relevant, and accurate Git commits (in [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) format), changelog entries (in [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) format), and code comments.
+
+Resources worth considering:
+
+- Hickey's [Simple Made Easy](https://www.youtube.com/watch?v=SxdOUGdseq4)
+- Osterhout's [APOSD](https://web.stanford.edu/~ouster/cgi-bin/aposd.php)
+- King's [Parse, don't validate](https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/)
 
 ## Credits
 
