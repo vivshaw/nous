@@ -52,6 +52,10 @@ Gro is built around agent-driven skill invocation. You do not generally need to 
 
 Each sub-plugin's README provides more details on what exactly it does and how.
 
+## The `.gro` directory
+
+This directory contains all the planning materials your agent writes. It's up to you whether to commit it to git or ignore it. Personally, I would recommend ignoring it. I think the types of written material that make good project guidance for an agent are very different from the types of written material that makes good durable documentation.
+
 ## Development
 
 See [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md).
