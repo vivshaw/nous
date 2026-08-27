@@ -1,6 +1,6 @@
 ---
 name: project-writing-plan
-description: Use when a design spec is complete and the project needs a plan and issue breakdown for engineers with zero codebase context.
+description: Use when a design spec is accepted and the project needs planning - takes the spec, writes a plan and issue breakdown for engineers with zero codebase context, and hands off to execution.
 user-invocable: false
 ---
 
@@ -28,6 +28,21 @@ Executors are fresh subagents with no memory of this codebase. That's why the pl
 ```
 
 Copy `project-writing-plan/plan-template.md` to `plan.md` and `project-writing-plan/issue-template.md` for each issue. Delete the guidance comments as you fill them in.
+
+## Step 0: Settle the inputs
+
+**The spec.** If you weren't given a path, ask. Never infer which one is meant. Planning the wrong spec is expensive to unwind.
+
+```
+Question: "Which design spec should I plan?"
+Options:
+  - [list any design specs you find in .gro/tasks/]
+  - "Let me provide the path"
+```
+
+**The slug.** Everything after `YYYY-MM-DD-` in the spec's directory name: `oauth2-svc-authn` from `.gro/tasks/2025-01-18-oauth2-svc-authn/spec.md`. It names the plan directory, and it **scopes every requirement identifier**: requirement `1.1` in the spec is cited as `{slug}.1.1`, which is what keeps IDs unique across repeated plan-and-execute rounds. It names the branch or worktree too.
+
+**Project guidance.** If `.gro/project-plan-guidance.md` exists, read it now and plan within it. It carries coding standards, testing requirements, review criteria, and quality gates this project expects. If it doesn't exist, say nothing and move on.
 
 ## Step 1: Investigate, once
 
@@ -169,7 +184,18 @@ Dispatch `core:critic-code-reviewer` over `plan.md` and every issue file, passin
 
 Create one task per issue found, copying the text verbatim, fix them all including Minor, and re-review until zero.
 
-Then hand off to execution:
+## Step 6: Hand off to execution
+
+Planning is long, and this early section is very likely to be lost to compaction. Re-read this skill before you write the handoff.
+
+Get real paths and confirm the plan directory exists. Both commands must succeed. If the directory isn't there, something went wrong in Step 4, so investigate rather than handing off a path that doesn't resolve.
+
+```bash
+git rev-parse --show-toplevel
+ls -d "<that>/.gro/tasks/<date>-<slug>"
+```
+
+Then, substituting the verified path:
 
 ```
 Plan complete: [N] milestones, [M] issues in `.gro/tasks/{slug}/`.
@@ -180,6 +206,8 @@ Plan complete: [N] milestones, [M] issues in `.gro/tasks/{slug}/`.
 
 Then /clear, paste, and run.
 ```
+
+Don't invoke `core:execute-implement-a-project` yourself. Execution needs fresh context.
 
 ## Common Rationalizations
 
@@ -193,3 +221,6 @@ Then /clear, paste, and run.
 | "The spec is weeks old but probably still accurate" | Verify it. Planning against a codebase that moved is how executors get sent to files that don't exist. |
 | "I'll track status in the issue files too" | One source of truth. plan.md holds the checkboxes. |
 | "This requirement doesn't fit a milestone cleanly" | Then the breakdown is wrong. Regroup rather than dropping it. |
+| "I'll just start executing, the context is right here" | It isn't, it's full of planning. Hand off and let `/clear` do its job. |
+| "A relative path is fine, we're in the repo" | `/clear` returns to the session's original directory. Use an absolute path. |
+| "I remember the handoff format" | Re-read Step 6. It's the section compaction takes first. |

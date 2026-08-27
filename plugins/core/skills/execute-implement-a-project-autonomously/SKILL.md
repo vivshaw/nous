@@ -34,11 +34,14 @@ Check these; do not assume.
 
 1. **A plan exists** at `.gro/tasks/<slug>/plan.md`, with issue files under `issues/`.
 2. **Its milestones carry checkboxes.** Run `grep -c "^- \[" .gro/tasks/<slug>/plan.md`. Zero matches means the plan predates the plan.md layout and the hook has nothing to count — re-plan it with `core:project-writing-plan` rather than hand-patching it.
-3. **A working branch is checked out**, not the default branch.
 
 ## The Process
 
-### 1. Arm the run
+### 1. Set up the working tree first
+
+Invoke `core:execute-setting-up-a-working-tree` **before arming**, while your partner is still here to answer where the run should happen.
+
+### 2. Arm the run
 
 Write `.gro/run.json`:
 
@@ -59,11 +62,11 @@ If `core:yoloproject` already wrote this file as `pending`, update it in place r
 
 Say that the run is armed and from which plan directory. Never arm silently.
 
-### 2. Implement
+### 3. Implement
 
 Invoke `core:execute-implement-a-project` for that plan directory and follow it exactly. Nothing about phase execution changes. The only difference is that when your turn ends with boxes unchecked, you are handed the next item instead of stopping.
 
-### 3. Stop when the run stops
+### 4. Stop when the run stops
 
 The run ends when `status` is no longer `active`.
 
@@ -76,7 +79,7 @@ The run ends when `status` is no longer `active`.
 
 **A halted run is a report, not a retry.** When the hook halts a run it is saying unattended progress stopped being safe. Say what happened and what remains. Re-arming a stalled run without diagnosing the stall just burns another 30 turns against the same wall.
 
-## 4. Completion
+## 5. Completion
 
 Autonomy ends at a green branch. `core:execute-finishing-a-development-branch` still asks before merging, opening a PR, or deleting anything. Do not tick a checkbox for merge steps. Do not push to the default branch. Do not interpret "don't ask me" as authorization to land code — it is authorization to build it without interruption, which is a different thing.
 

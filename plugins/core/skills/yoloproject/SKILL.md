@@ -53,7 +53,7 @@ Use `core:design-spec-exploring` and follow it exactly. Ask every question it te
 
 ### 3. Plan, interactively
 
-Use `core:project-getting-started`, which cuts the branch and drives `core:project-writing-plan`.
+Use `core:project-writing-plan` to plan the implementation.
 
 `core:project-writing-plan` asks you to approve its milestone breakdown. Answer that one — it is cheap and it is the last look at build order before the work multiplies. It writes the issues itself afterwards, so there is nothing further to sit through.
 

@@ -29,7 +29,11 @@ Options:
   - "Let me provide the path"
 ```
 
-## 1. Read the plan
+## 1. Set up the working tree
+
+Invoke `core:execute-setting-up-a-working-tree` before any work. It works out whether you've already set up a working tree, asks where this implementation should run, prepares, and confirms a clean baseline.
+
+## 2. Read the plan
 
 Read `plan.md` once, in full. It's short by design, and it's the context every dispatch depends on — you'll be quoting its path into subagent prompts all run.
 
@@ -51,9 +55,9 @@ mkdir -p "${SCRATCHPAD_DIR}"
 
 Then TaskCreate two entries per milestone — "Milestone N: issues" and "Milestone N: verify" — plus one for wrap-up. Put the absolute plan path in the first description; after compaction the task list is all that survives.
 
-## 2. Run each milestone
+## 3. Run each milestone
 
-### 2a. Issues
+### 3a. Issues
 
 For each unchecked issue in the milestone, in order, dispatch `core:executor-task`:
 
@@ -88,7 +92,7 @@ Never tick a box you haven't verified. No code review between issues — that co
 
 If an issue implements behavior but its "Done when" names no tests, that's a hole in the plan, not a step to skip. Surface it.
 
-### 2b. Verify the milestone
+### 3b. Verify the milestone
 
 This is the gate. Two things have to hold.
 
@@ -111,7 +115,7 @@ Only when both hold, tick the milestone's gate box.
 
 If the reviewer hits a context limit, the milestone changed too much for one pass — review the first half of its commits, fix, then the second half.
 
-## 3. Wrap-up
+## 4. Wrap-up
 
 After every milestone is verified, work the `## Wrap-up` boxes in `plan.md` in order.
 

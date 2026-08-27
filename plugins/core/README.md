@@ -13,11 +13,11 @@ Gro Core is the heart of Gro. This plugin contains Gro's core Research -> Plan -
 
 **Plan:**
 
-- `core:project-getting-started`: Begins project planning for an accepted project spec, including spinning up a branch.
-- `core:project-writing-plan`: Writes a concise project plan and a project kanban full of tasks. The project spec is a high-level document with an emphasis on defining goals and non-goals, hashing out any core technical architecture that must be decided up front, and sequencing work. All specific features and instructions are put in the task board.
+- `core:project-writing-plan`: Writes a concise project plan and a project kanban full of tasks. The plan is a high-level document with an emphasis on defining goals and non-goals, hashing out any core technical architecture that must be decided up front, and sequencing work. All specific features and instructions are put in the task board.
 
 **Implement:**
 
+- `core:execute-setting-up-a-working-tree`: Prepares a branch or worktree and verifies a clean starting state.
 - `core:execute-implement-a-project`: Executes on a project plan milestone by milestone, dispatching subagents per task, and pausing regularly for user input.
 - `core:execute-implement-a-project-autonomously`: Executes a project plan fully autonomously, not pausing for user input.
 - `core:execute-test-driven-development`: Applies a strict red -> green -> refactor TDD approach, to be used in both implementation work and bugfixes.

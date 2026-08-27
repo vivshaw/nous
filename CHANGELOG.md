@@ -14,6 +14,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ### Changed
 
+- **core:** The `project-getting-started` skill is merged into `core:project-writing-plan`, which is now the planning phase's entry point.
+- **core:** Gro now asks the user if they'd like work execute in a worktree. All Core skills are updated accordingly.
 - **core:** `core:using-gro` now explicitly answers "how do I use Gro?"
 - **style:** TypeScript tooling guidance updated, including stricter static analysis & TypeScript 7.
 

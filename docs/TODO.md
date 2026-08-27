@@ -1,6 +1,5 @@
 - multiharnessify: [MULTIHARNESS.md](MULTIHARNESS.md)
 - instead of inline python, maybe distribute a cli?
-- use git worktrees, if it doesn't work right already.
 - support Linear integration?
 - remove slash command from executing-autonomously?
 - make sure subagents get writing comments skill?
@@ -14,3 +13,6 @@
   - arch pass: duplication, complexity, idiomatic code, modularity. ruthlessly pursue simplicity, directness, and concision above all else. use the Gro code review skill
 - batch reviews? always include instructions never to trim scope? ensure iterative review uses the same prompt each generation?
 - further principles/You might like if... rework
+- harness managed worktrees too complex?
+- rename tasks dir -> projects?
+- yoloproject -> autoproject?

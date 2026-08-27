@@ -128,7 +128,7 @@ Ready for the project plan? That needs fresh context to investigate the codebase
 
 (1) Copy this:
 
-    Use the core:project-getting-started skill for @.gro/tasks/{slug}/spec.md
+    Use the core:project-writing-plan skill for @.gro/tasks/{slug}/spec.md
 
 (2) Run /clear
 

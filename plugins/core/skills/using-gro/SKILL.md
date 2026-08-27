@@ -87,7 +87,7 @@ Before using a skill, announce that you are using it. "I'm using [Skill Name] to
 
 When multiple skills could apply, use this order:
 
-1. **Process skills first** (`core:design-spec-exploring`, `core:project-getting-started`) — these determine how to approach the task
+1. **Process skills first** (`core:design-spec-exploring`, `core:project-writing-plan`) — these determine how to approach the task
 2. **Implementation skills second** (`core:execute-implement-a-project`, `core:execute-test-driven-development`) — these guide execution
 
 "Let's build X" → `core:design-spec-exploring` first, then implementation skills.
