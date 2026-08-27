@@ -12,7 +12,7 @@ import pytest
 SCRIPT = os.path.join(os.path.dirname(__file__), "continue-autonomous-run.py")
 
 SESSION = "sess-0001"
-PLAN_DIR = ".gro/tasks/2026-08-09-widgets"
+PLAN_DIR = ".gro/projects/2026-08-09-widgets"
 
 
 def write_run(root: Path, **overrides: Any) -> Path:
@@ -217,7 +217,7 @@ def test_unlinked_boxes_are_worked_from_the_plan(tmp_path: Path) -> None:
 
 def test_missing_plan_errors_once_then_goes_quiet(tmp_path: Path) -> None:
     """A bad plan_dir must surface itself rather than silently disabling autonomy."""
-    write_run(tmp_path, plan_dir=".gro/tasks/typo")
+    write_run(tmp_path, plan_dir=".gro/projects/typo")
     output = run_hook(tmp_path)
     assert blocks(output)
     assert read_run(tmp_path)["status"] == "error"

@@ -102,8 +102,8 @@ Nothing to do. Say which branch the work will land on, so it's on the record bef
 **Worktree only.** A worktree is a fresh checkout from a commit, so whatever planning wrote is still in the main checkout. Further, if `.gro/` is untracked, it isn't in git at all.
 
 ```bash
-mkdir -p .gro/tasks
-cp -R "<main-checkout>/.gro/tasks/<date>-<slug>" .gro/tasks/
+mkdir -p .gro/projects
+cp -R "<main-checkout>/.gro/projects/<date>-<slug>" .gro/projects/
 cp "<main-checkout>/.gro/project-plan-guidance.md" .gro/ 2>/dev/null
 cp "<main-checkout>/.gro/design-spec-guidance.md" .gro/ 2>/dev/null
 cp "<main-checkout>/.gro/run.json" .gro/ 2>/dev/null

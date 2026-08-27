@@ -18,6 +18,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - **core:** Gro now asks the user if they'd like work execute in a worktree. All Core skills are updated accordingly.
 - **core:** `core:using-gro` now explicitly answers "how do I use Gro?"
 - **core:** Yoloproject is renamed to Autoproject.
+- **core:** Project materials are moved from `.gro/tasks/` to `.gro/projects/`.
 - **style:** TypeScript tooling guidance updated, including stricter static analysis & TypeScript 7.
 
 ### Fixed

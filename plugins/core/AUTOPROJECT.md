@@ -31,7 +31,7 @@ Only `plan.md` is scanned, and only checkboxes at column 0. Document order in `p
 
 ```json
 {
-  "plan_dir": ".gro/tasks/2026-08-09-widgets",
+  "plan_dir": ".gro/projects/2026-08-09-widgets",
   "status": "active",
   "continuations": 0,
   "last_remaining": null,

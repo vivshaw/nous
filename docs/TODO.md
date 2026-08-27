@@ -13,5 +13,4 @@
 - batch reviews? always include instructions never to trim scope? ensure iterative review uses the same prompt each generation?
 - further principles/You might like if... rework
 - harness managed worktrees too complex?
-- rename tasks dir -> projects?
 - make autoproject really really auto? otherwise defer choice of autonomous vs. interactive to execution phase?

@@ -32,8 +32,8 @@ user-invocable: false
 
 Check these; do not assume.
 
-1. **A plan exists** at `.gro/tasks/<slug>/plan.md`, with issue files under `issues/`.
-2. **Its milestones carry checkboxes.** Run `grep -c "^- \[" .gro/tasks/<slug>/plan.md`. Zero matches means the plan predates the plan.md layout and the hook has nothing to count — re-plan it with `core:project-writing-plan` rather than hand-patching it.
+1. **A plan exists** at `.gro/projects/<slug>/plan.md`, with issue files under `issues/`.
+2. **Its milestones carry checkboxes.** Run `grep -c "^- \[" .gro/projects/<slug>/plan.md`. Zero matches means the plan predates the plan.md layout and the hook has nothing to count — re-plan it with `core:project-writing-plan` rather than hand-patching it.
 
 ## The Process
 
@@ -47,7 +47,7 @@ Write `.gro/run.json`:
 
 ```json
 {
-  "plan_dir": ".gro/tasks/2026-08-09-widgets",
+  "plan_dir": ".gro/projects/2026-08-09-widgets",
   "status": "active",
   "continuations": 0,
   "last_remaining": null,

@@ -19,7 +19,7 @@ Executors are fresh subagents with no memory of this codebase. That's why the pl
 ## What you produce
 
 ```
-.gro/tasks/YYYY-MM-DD-{slug}/
+.gro/projects/YYYY-MM-DD-{slug}/
   spec.md              # the design spec, already written
   plan.md              # shared context + milestones + progress
   issues/
@@ -36,11 +36,11 @@ Copy `project-writing-plan/plan-template.md` to `plan.md` and `project-writing-p
 ```
 Question: "Which design spec should I plan?"
 Options:
-  - [list any design specs you find in .gro/tasks/]
+  - [list any design specs you find in .gro/projects/]
   - "Let me provide the path"
 ```
 
-**The slug.** Everything after `YYYY-MM-DD-` in the spec's directory name: `oauth2-svc-authn` from `.gro/tasks/2025-01-18-oauth2-svc-authn/spec.md`. It names the plan directory, and it **scopes every requirement identifier**: requirement `1.1` in the spec is cited as `{slug}.1.1`, which is what keeps IDs unique across repeated plan-and-execute rounds. It names the branch or worktree too.
+**The slug.** Everything after `YYYY-MM-DD-` in the spec's directory name: `oauth2-svc-authn` from `.gro/projects/2025-01-18-oauth2-svc-authn/spec.md`. It names the plan directory, and it **scopes every requirement identifier**: requirement `1.1` in the spec is cited as `{slug}.1.1`, which is what keeps IDs unique across repeated plan-and-execute rounds. It names the branch or worktree too.
 
 **Project guidance.** If `.gro/project-plan-guidance.md` exists, read it now and plan within it. It carries coding standards, testing requirements, review criteria, and quality gates this project expects. If it doesn't exist, say nothing and move on.
 
@@ -192,17 +192,17 @@ Get real paths and confirm the plan directory exists. Both commands must succeed
 
 ```bash
 git rev-parse --show-toplevel
-ls -d "<that>/.gro/tasks/<date>-<slug>"
+ls -d "<that>/.gro/projects/<date>-<slug>"
 ```
 
 Then, substituting the verified path:
 
 ```
-Plan complete: [N] milestones, [M] issues in `.gro/tasks/{slug}/`.
+Plan complete: [N] milestones, [M] issues in `.gro/projects/{slug}/`.
 
 **Copy the line below before running /clear — it erases this conversation.**
 
-    Use the core:execute-implement-a-project skill for /abs/path/.gro/tasks/{slug}/
+    Use the core:execute-implement-a-project skill for /abs/path/.gro/projects/{slug}/
 
 Then /clear, paste, and run.
 ```
