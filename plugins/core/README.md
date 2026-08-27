@@ -47,7 +47,7 @@ Gro Core is the heart of Gro. This plugin contains Gro's core Research -> Plan -
 
 **Entrypoints:**
 
-- `core:yoloproject`: A front-to-back workflow for autonomous project work. (More on this below!)
+- `core:autoproject`: A front-to-back workflow for autonomous project work. (More on this below!)
 
 ### Agents
 
@@ -67,13 +67,13 @@ Gro Core is the heart of Gro. This plugin contains Gro's core Research -> Plan -
 | -------------------------------- | ---------------- | --------------------------------------------------------------------------------------------------------------------- |
 | `reminder-use-generic-agents.sh` | SessionStart     | Reminds the model to invoke `core:using-generic-agents` whenever it dispatches a generic agent                        |
 | `reminder-use-skills.sh`         | UserPromptSubmit | Injects a reminder about invoking Gro skills before responding                                                   |
-| `continue-autonomous-run.py`     | Stop             | While in Yoloproject mode, prompts the agent to continue and hands it the next task |
+| `continue-autonomous-run.py`     | Stop             | While in Autoproject mode, prompts the agent to continue and hands it the next task |
 
-## Yoloproject
+## Autoproject
 
-Yoloproject is an end-to-end autonomous workflow. You work with the agent to define the spec and plan as usual. From that point onward, the agent will run autonomously until every milestone is complete. It will only stop when it can testably verify that the project requirements are satisfied, or when it runs into a blocking problem and can't make forward progress.
+Autoproject is an end-to-end autonomous workflow. You work with the agent to define the spec and plan as usual. From that point onward, the agent will run autonomously until every milestone is complete. It will only stop when it can testably verify that the project requirements are satisfied, or when it runs into a blocking problem and can't make forward progress.
 
-For lower-level details, see [the YOLOPROJECT doc](./YOLOPROJECT.md).
+For lower-level details, see [the AUTOPROJECT doc](./AUTOPROJECT.md).
 
 ## Principles
 

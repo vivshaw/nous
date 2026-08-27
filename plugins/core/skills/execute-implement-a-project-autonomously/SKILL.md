@@ -1,7 +1,7 @@
 ---
 name: execute-implement-a-project-autonomously
-description: Use when a validated project plan should be implemented without pausing between phases - the human partner has asked for an unattended or overnight run, or core:yoloproject has reached the implementation phase
-user-invocable: true
+description: Use when a validated project plan should be implemented without pausing between phases - the human partner has asked for an unattended or overnight run, or core:autoproject has reached the implementation phase
+user-invocable: false
 ---
 
 # Implementing a Project Autonomously
@@ -19,11 +19,11 @@ user-invocable: true
 ## When to Use
 
 - Your human partner asked for an unattended run of a plan that already exists
-- `core:yoloproject` has finished designing and planning and reached implementation
+- `core:autoproject` has finished designing and planning and reached implementation
 - You are resuming a run that a cap, stall, or crash interrupted
 
 **Don't use when:**
-- No validated plan exists — use `core:yoloproject` to design and plan first
+- No validated plan exists — use `core:autoproject` to design and plan first
 - The plan still contains `[DECISION NEEDED]` markers. An unresolved decision is not something autonomy can absorb; it is a hole the implementation falls into
 - The work touches production systems, credentials, or anything irreversible
 - Your human partner has not asked for autonomy. **Never arm this on your own initiative.**
@@ -58,7 +58,7 @@ Write `.gro/run.json`:
 - `plan_dir` is relative to the repo root and must be the directory holding `plan.md`.
 - The remaining fields are the hook's bookkeeping. Initialize them exactly as above, then leave them alone.
 
-If `core:yoloproject` already wrote this file as `pending`, update it in place rather than starting a new one.
+If `core:autoproject` already wrote this file as `pending`, update it in place rather than starting a new one.
 
 Say that the run is armed and from which plan directory. Never arm silently.
 

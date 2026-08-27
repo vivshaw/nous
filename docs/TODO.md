@@ -1,7 +1,6 @@
 - multiharnessify: [MULTIHARNESS.md](MULTIHARNESS.md)
 - instead of inline python, maybe distribute a cli?
 - support Linear integration?
-- remove slash command from executing-autonomously?
 - make sure subagents get writing comments skill?
 - apply concise + simple technical english?
 - deslop:
@@ -15,4 +14,4 @@
 - further principles/You might like if... rework
 - harness managed worktrees too complex?
 - rename tasks dir -> projects?
-- yoloproject -> autoproject?
+- make autoproject really really auto? otherwise defer choice of autonomous vs. interactive to execution phase?

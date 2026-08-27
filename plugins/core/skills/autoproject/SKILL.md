@@ -1,16 +1,16 @@
 ---
-name: yoloproject
+name: autoproject
 description: Use when the human partner wants a whole project built with minimal supervision - "build me X, don't babysit me", "run this overnight", or any request to take a feature from idea to green branch without checking in at every phase
 user-invocable: true
 ---
 
-# yoloproject
+# autoproject
 
 ## Overview
 
 The front door to gro's automated workflow, for when your human partner wants to state their intent once and come back to finished work.
 
-The name is a warning label. Nobody should end up in this mode without noticing.
+Autonomy is opt-in, and it must be announced out loud. Nobody should end up in this mode without noticing.
 
 ## When to Use
 
@@ -29,7 +29,7 @@ The name is a warning label. Nobody should end up in this mode without noticing.
 
 Say this as the first line of your reply:
 
-> **YOLOPROJECT** — I'll design and plan this with you, then implement the whole plan without checking in. I won't merge.
+> **AUTOPROJECT** — I'll design and plan this with you, then implement the whole plan without checking in. I won't merge.
 
 Then write `.gro/run.json` immediately, before any other work:
 
@@ -65,7 +65,7 @@ Invoke `core:execute-implement-a-project-autonomously` with the plan directory. 
 
 ## Red Flags
 
-- Starting a yoloproject your human partner did not ask for
+- Starting an autoproject your human partner did not ask for
 - Starting one to escape a conversation that felt like too many questions
 - Skimping on design questions because autonomy is coming
 - Proceeding past a `[DECISION NEEDED]` marker by picking an answer yourself

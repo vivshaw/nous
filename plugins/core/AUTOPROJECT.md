@@ -1,4 +1,4 @@
-# Yoloproject
+# Autoproject
 
 How the autonomous loop actually works, for when you need to debug one.
 
@@ -27,7 +27,7 @@ Only `plan.md` is scanned, and only checkboxes at column 0. Document order in `p
 
 ## `run.json`
 
-`.gro/run.json` is used to track Yoloproject session progress. Before work is started, it will be initialized by `core:yoloproject` in `pending` status. During execution, `core:execute-implement-a-project-autonomously` sets it to `active` and continually updates it.
+`.gro/run.json` is used to track Autoproject session progress. Before work is started, it will be initialized by `core:autoproject` in `pending` status. During execution, `core:execute-implement-a-project-autonomously` sets it to `active` and continually updates it.
 
 ```json
 {
