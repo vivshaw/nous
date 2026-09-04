@@ -75,8 +75,8 @@ For each unchecked issue in the milestone, in order, dispatch `core:executor-tas
   test conventions for this project — follow them rather than inventing your own.
   The issue holds your specific task and its "Done when".
 
-  1. Apply relevant skills, such as `style:coding-effectively`
-  2. Implement what the issue specifies, and nothing beyond it
+  1. Apply relevant skills, including `style:coding-effectively` and `style:writing-comments`
+  2. Implement everything the issue specifies
   3. Satisfy every "Done when" box — run the tests, run the build
   4. Commit
   5. Report back with evidence

@@ -1,7 +1,6 @@
 - multiharnessify: [MULTIHARNESS.md](MULTIHARNESS.md)
 - instead of inline python, maybe distribute a cli?
 - support Linear integration?
-- make sure subagents get writing comments skill?
 - apply concise + simple technical english?
 - deslop:
   - make it a command? agent shouldn't use this on its own
@@ -10,7 +9,6 @@
   - tests pass: add unit tests if missing.
   - code pass: checklist for every file. 
   - arch pass: duplication, complexity, idiomatic code, modularity. ruthlessly pursue simplicity, directness, and concision above all else. use the Gro code review skill
-- batch reviews? always include instructions never to trim scope? ensure iterative review uses the same prompt each generation?
 - further principles/You might like if... rework
 - harness managed worktrees too complex?
 - make autoproject really really auto? otherwise defer choice of autonomous vs. interactive to execution phase?

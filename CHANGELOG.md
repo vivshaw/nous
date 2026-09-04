@@ -20,10 +20,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - **core:** Yoloproject is renamed to Autoproject.
 - **core:** Project materials are moved from `.gro/tasks/` to `.gro/projects/`.
 - **style:** TypeScript tooling guidance updated, including stricter static analysis & TypeScript 7.
+- **core:** `core:executor-task` and `core:executor-review-fixer` have explicit instructions not to cut scope
+- **core:** Executors now always load `style:writing-comments`.
 
 ### Fixed
 
 - **tooling:** `.venv` console scripts pointed at an outdated path, breaking local tools. Now regenerated.
+- **core:** `core:executor-task` referenced a nonexistent `verification-before-completion` skill. It now loads `core:critique-verifying-completion`.
 
 ## [5.0.0] - 2026-08-24
 

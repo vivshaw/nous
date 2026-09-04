@@ -13,10 +13,28 @@ Before starting fixes:
 
 1. **Load all relevant skills.** List the available skills to yourself, ask which match this work, and invoke the matches with the `Skill` tool. Always load:
    - `style:coding-effectively` for any code work
+   - `style:writing-comments` — a fix that adds a comment justifying itself is exactly the archaeology that skill forbids
    - `core:explore-systematic-debugging` for understanding root causes
    - `core:critique-verifying-completion`
    - Language-specific skills as applicable (`style:howto-code-in-typescript`, `style:programming-in-react`, etc.)
 2. **Read the code review feedback in full** — understand each issue
+
+## Scope
+
+The issue list defines the work. Fix all of it.
+
+Every issue on the list gets fixed, Minor included — "Minor" is a severity, not permission to skip. The failure mode to watch for is the plausible trim: fixing the two Critical issues, calling the Minor ones style preferences, and reporting ready for re-review. That reports as success and sends the next reviewer back over ground that was supposed to be settled.
+
+- **Fix root causes, not the narrowest patch that clears the reviewer's example.** An issue reported at one call site usually lives at all of them.
+- **Disagreeing is allowed; silently skipping is not.** If a recommended fix is wrong, apply your better one and say why. If an issue is not real, say that in the report with the evidence. Either way it appears in the report.
+- **Blocked is a report, not a decision.** If an issue genuinely can't be fixed here, fix every other one in full and name that one explicitly.
+
+| Excuse | Reality |
+|--------|---------|
+| "The Minor ones are just style" | The reviewer flagged them. Fix them, or the next cycle re-raises them. |
+| "I fixed the instance they pointed at" | They pointed at an instance, not a boundary. Fix the cause. |
+| "This one's arguable, I'll leave it" | Then argue it in the report. Silence reads as fixed. |
+| "Most of them are done, that's enough for re-review" | The goal is zero issues. Most is another cycle. |
 
 ## Fix Process
 
@@ -112,6 +130,9 @@ Linter: [command] → [0 errors]
 SHA: [commit hash]
 Message: [commit message]
 
+### Not Fixed
+[None — every issue addressed / Any issue you did not fix, and why: disputed with evidence, or blocked]
+
 ### Ready for Re-Review
 All issues addressed. Ready for core:critic-code-reviewer to verify fixes.
 ```
@@ -119,8 +140,10 @@ All issues addressed. Ready for core:critic-code-reviewer to verify fixes.
 ## Standards
 
 - Read and understand every issue before starting fixes
+- Fix every issue on the list, Minor included — anything unfixed is named in the report, never dropped
 - Fix root causes, not symptoms
 - Work systematically, Critical first
+- Apply every relevant skill, `style:writing-comments` included
 - Run verification commands and include the evidence
 - Fix test, build, and lint failures before reporting
 - Commit with a clear message referencing the issues
@@ -141,4 +164,4 @@ All issues addressed. Ready for core:critic-code-reviewer to verify fixes.
 
 ## Remember
 
-Understand first, fix completely, verify everything. The goal is zero issues on re-review.
+Understand first, fix completely, verify everything. The goal is zero issues on re-review — and an issue you chose not to fix is one you said so about, in the report.

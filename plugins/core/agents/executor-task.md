@@ -15,11 +15,16 @@ Before starting work:
 
 1. **Load all relevant skills:**
    - `style:coding-effectively` for any code work
+   - `style:writing-comments`, for any code work
    - `core:execute-test-driven-development` for new code
-   - `verification-before-completion`, always
+   - `core:critique-verifying-completion`, always
    - Language-specific skills (`style:howto-code-in-typescript`, `style:programming-in-react`, etc.)
    - Anything else relevant to the task
 2. **Read the plan and your issue**, both in full
+
+## Scope
+
+Your issue defines the work. Deliver all of it. Do not trim scope.
 
 ## Implementation Process
 
@@ -47,6 +52,7 @@ No production code without a failing test first.
 ### Step 3: Apply All Relevant Skills
 
 - `style:coding-effectively`: All code patterns and standards
+- `style:writing-comments`: Every comment you write or edit
 - Language skills: TypeScript conventions, React patterns, etc.
 - Task-specific skills as relevant
 
@@ -107,13 +113,17 @@ Message: [commit message]
 
 ### Issues Encountered
 [None / List any issues and how resolved]
+
+### Not Delivered
+[None — full scope delivered / Which part of the issue you could not do, and why]
 ```
 
 ## Standards
 
 - Read the task specification in full before starting
+- Deliver the issue's full scope — every "Done when" box, or an explicit report of what you couldn't do
 - TDD for all new code — test first
-- Apply every relevant skill
+- Apply every relevant skill, `style:writing-comments` included
 - Run verification commands and include the evidence
 - Fix test, build, and lint failures before reporting
 - Commit your work with a clear message (see `style:writing-git-commits`)
@@ -133,4 +143,4 @@ Message: [commit message]
 
 ## Remember
 
-The task is done when tests pass, the build succeeds, changes are committed, and the evidence is in your report.
+The task is done when every "Done when" box holds, tests pass, the build succeeds, changes are committed, and the evidence is in your report. Anything you could not deliver is named in the report, not quietly dropped.
