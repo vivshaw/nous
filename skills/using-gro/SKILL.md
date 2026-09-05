@@ -19,7 +19,7 @@ Checking a plausible skill is cheap; missing one can require a rewrite. If a loa
 Examples:
 
 - New project or feature: start with `design-spec-exploring`.
-- Existing design needing a plan: use `project-getting-started`.
+- Existing design needing a plan: use `project-writing-plan`.
 - Existing plan needing implementation: use `execute-implement-a-project`.
 - Bug investigation: use `explore-systematic-debugging`.
 - Completion claim: use `critique-verifying-completion`.

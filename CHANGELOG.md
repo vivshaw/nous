@@ -18,14 +18,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 ### Changed
 
 - **repo:** BREAKING: Gro is now one package containing one canonical root `skills/` tree for Claude Code, Codex, and OpenCode. Install `gro@gro` instead of separate marketplace plugins.
+- **skills:** Merged `project-getting-started` into `project-writing-plan`, which now owns planning input selection and execution handoff.
+- **skills:** Implementation now offers a worktree, new branch, or current branch and preserves provenance-aware cleanup behavior.
 - **skills:** `using-gro` now explicitly answers “how do I use Gro?”
+- **skills:** Project materials moved from `.gro/tasks/` to `.gro/projects/`.
 - **skills:** TypeScript tooling guidance now covers stricter static analysis and TypeScript 7.
 - **skills:** Consolidated package creation and marketplace maintenance into `managing-a-skills-package`, which loads narrower authoring guidance only when needed.
-- **skills:** Merged the `creating-a-plugin` and `maintaining-a-marketplace` skills into one package lifecycle skill.
+- **skills:** Portable implementer and review-fixer prompts now require complete scope delivery and load `writing-comments` when comments change.
 
 ### Fixed
 
 - **tooling:** `.venv` console scripts pointed at an outdated path, breaking local tools. Now regenerated.
+- **skills:** The implementer prompt now loads the existing `critique-verifying-completion` skill instead of a nonexistent verification skill.
 
 ### Removed
 

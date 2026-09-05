@@ -5,5 +5,5 @@
   - tests pass: add unit tests if missing.
   - code pass: checklist for every file.
   - arch pass: duplication, complexity, idiomatic code, modularity. ruthlessly pursue simplicity, directness, and concision above all else. use the Gro code review skill
-- batch reviews? always include instructions never to trim scope? ensure iterative review uses the same prompt each generation?
 - further principles/You might like if... rework
+- harness managed worktrees too complex?

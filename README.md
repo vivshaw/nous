@@ -46,7 +46,7 @@ Restart OpenCode after changing its config.
 
 Describe the work normally: “plan this feature,” “implement this project plan,” “debug this failure,” or “review this branch.” The host discovers relevant skills from their descriptions. To get oriented, ask: “How can I use Gro?”
 
-The main workflow is research, plan, implement, review. Planning produces `.gro/tasks/<project>/spec.md`, `plan.md`, and isolated issue files.
+The main workflow is research, plan, implement, review. Planning produces `.gro/projects/<project>/spec.md`, `plan.md`, and isolated issue files.
 
 ## Contents
 
@@ -56,6 +56,10 @@ The main workflow is research, plan, implement, review. Planning produces `.gro/
 - Research and prose: codebase investigation, internet and remote-source research, technical writing, and data visualization.
 
 Every skill and its supporting resources live under `skills/`.
+
+## The `.gro` directory
+
+This directory contains all the planning materials your agent writes. It's up to you whether to commit it to git or ignore it. Personally, I would recommend ignoring it. I think the types of written material that make good project guidance for an agent are very different from the types of written material that makes good durable documentation.
 
 ## Development
 
