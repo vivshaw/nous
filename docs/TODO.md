@@ -1,16 +1,9 @@
-- multiharnessify: [MULTIHARNESS.md](MULTIHARNESS.md)
-- instead of inline python, maybe distribute a cli?
-- use git worktrees, if it doesn't work right already.
 - support Linear integration?
-- remove slash command from executing-autonomously?
-- make sure subagents get writing comments skill?
-- apply concise + simple technical english?
 - deslop:
-  - make it a command? agent shouldn't use this on its own
   - prose pass: checklist for every file. if code file, comments skill. if md, writing skills
   - static pass: ratchet up linter, typechecker, formatter to max. circular dep checker. knip. then fix anything exposed.
   - tests pass: add unit tests if missing.
-  - code pass: checklist for every file. 
+  - code pass: checklist for every file.
   - arch pass: duplication, complexity, idiomatic code, modularity. ruthlessly pursue simplicity, directness, and concision above all else. use the Gro code review skill
 - batch reviews? always include instructions never to trim scope? ensure iterative review uses the same prompt each generation?
 - further principles/You might like if... rework

@@ -1,9 +1,0 @@
-{
-  "name": "style",
-  "version": "5.0.0",
-  "description": "Coding standards & language-specific patterns, covering TypeScript, Go, Python, and Rust",
-  "author": {
-    "name": "vivshaw"
-  },
-  "license": "CC-BY-SA-4.0"
-}

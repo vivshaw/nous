@@ -10,7 +10,7 @@ repos:
     rev: v2.1.0
     hooks:
       - id: mypy
-        files: ^(plugins/(core|extra)/hooks|plugins/research/skills/.*/scripts|tools)/(?!test_).*\.py$
+        files: ^(skills/.*/scripts|tools)/(?!test_).*\.py$
         # Strictness is configured in pyproject.toml [tool.mypy].
 
   - repo: local
@@ -20,11 +20,11 @@ repos:
         entry: uv run pytest
         language: system
         pass_filenames: false
-        files: ^(plugins/(core|extra)/hooks|plugins/research/skills/.*/scripts|tools)/.*\.py$
+        files: ^(skills/|tools/|\.claude-plugin/|\.codex-plugin/|package\.json$|CHANGELOG\.md$|LICENSE(?:\..*)?$)
 
       - id: swatches-up-to-date
         name: swatches.html matches its generator
-        entry: uv run python tools/build_swatches.py --check
+        entry: uv run python tools/visualizing-data/build_swatches.py --check
         language: system
         pass_filenames: false
-        files: ^(tools/build_swatches\.py|plugins/research/skills/visualizing-data/assets/swatches\.html)$
+        files: ^(tools/visualizing-data/build_swatches\.py|skills/visualizing-data/assets/swatches\.html)$

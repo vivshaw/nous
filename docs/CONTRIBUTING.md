@@ -1,44 +1,39 @@
 # Developing Gro
 
-Are you interested in contributing to Gro, or developing your own fork? This document will provide what you need.
+Gro has one canonical `skills/` tree and thin package metadata for Claude Code, Codex, and OpenCode.
+
+Use Gro to develop Gro. Relevant authoring skills include `writing-skills`, `testing-skills-with-subagents`, `writing-agent-directives`, and `managing-a-skills-package`.
 
 ## Prerequisites
 
-- [Nix](https://nixos.org/download) (with flakes enabled)
-- [direnv](https://direnv.net/) (optional, for auto-activation)
+- [Nix](https://nixos.org/download) with flakes enabled
+- [direnv](https://direnv.net/) for optional automatic activation
 
-All other developer tools you'll need are pinned in the Nix flake.
+Enter the environment with direnv or `nix develop`, then run `uv sync --all-groups` and `pre-commit install`.
 
-### Up and Running
+## Commands
 
-If you have direnv active, you will be prompted to `direnv allow` upon `cd`ing in. If you do not, use `nix develop` to enter a one-off Nix shell. Once you are in the shell, run `pre-commit install` to activate Git hooks.
-
-### Developing Hooks
-
-Some Gro features are implemented as hooks. The hooks relevant to the core workflow live in [Gro Core](../plugins/core/). Assorted others live in [Gro Extra](../plugins/extra/). At this time, the preferred language for hooks is Python. Shell is also acceptable, but only for extremely simple scripts only.
-
-If written in Python, you should include tests for your hook implementation.
-
-### Python Toolchain
-
-Dev deps are managed by [uv](https://docs.astral.sh/uv/).
-
-| Command | What it does |
+| Command | Purpose |
 |---|---|
-| `uv sync --all-groups` | create or repair `.venv` from `uv.lock` |
-| `uv run pytest` | run every test |
-| `uv run ruff check plugins/ tools/` | lint |
-| `uv run ruff format plugins/ tools/` | format |
-| `uv run mypy` | typecheck |
+| `uv run pytest` | Run Python and browser-backed tests |
+| `uv run ruff check skills/ tools/` | Lint Python |
+| `uv run ruff format --check skills/ tools/` | Check formatting |
+| `uv run mypy` | Typecheck Python |
+| `uv run python tools/visualizing-data/build_swatches.py --check` | Verify the generated visualization reference |
+| `npm pack --dry-run` | Inspect OpenCode package contents |
 
-Config lives in:
+Install Playwright's isolated Chromium with `uv run playwright install chromium` when browser tests request it.
 
-- `flake.nix`: pinned tool versions
-- `pyproject.toml`: uv deps, ruff / mypy / pytest config
-- `.pre-commit-config.yaml`: git hook config
+## Skills
 
-Some checks require a browser. You can supply one by running `uv run playwright install chromium`. If you don't, the checks will instruct you to do so when you run them.
+Each `skills/<name>/SKILL.md` follows the Agent Skills specification. Keep names globally unique and equal to the parent directory. Supporting scripts, references, prompt templates, and assets stay beside their skill.
 
-## Use Gro to develop Gro!
+Canonical skill prose should name capabilities, not host-specific tool or agent identifiers. Platform-specific metadata belongs in manifests or adapters, not generated copies of skills.
 
-Gro Meta contains a package of skills to develop effective agents and skills. They can help you write clear and effective skills, pressure-test skills, and avoid ineffective token-wasting patterns.
+## Packaging
+
+- Claude Code discovers root `skills/` through `.claude-plugin/plugin.json`.
+- Codex uses `.codex-plugin/plugin.json` and the same root tree.
+- OpenCode loads `@vivshaw/gro`; `opencode.js` appends the packaged `skills/` path to live config.
+
+After changing `opencode.js`, restart OpenCode before testing because plugins are loaded at startup.

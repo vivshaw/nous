@@ -1,61 +1,74 @@
-# Gro 🌱
+# Gro
 
-Gro is a suite of agent skills for software development. An offspring of [obra/superpowers](https://github.com/obra/superpowers) and [ed3dai/ed3d-plugins](https://github.com/ed3dai/ed3d-plugins), Gro has been tweaked with an emphasis on lightwight planning, adversarial review loops, and my own standards for code style, prose, and agent diectives.
+Gro is a portable suite of Agent Skills for software development. It grew from [obra/superpowers](https://github.com/obra/superpowers) and [ed3dai/ed3d-plugins](https://github.com/ed3dai/ed3d-plugins), with an emphasis on lightweight planning, independent review loops, strict coding standards, clear prose, and durable project state.
 
-## You might like Gro if...
+## Principles
 
-Try Gro if you find the following list of principles compelling:
+- Prefer simplicity, directness, and concision.
+- Use strict typechecking, linting, formatting, and tests to rule out errors.
+- Start projects with questions and write short, verifiable requirements.
+- Keep project plans lightweight and use one durable progress record.
+- Delegate bounded implementation and research to fresh native subagents when available.
+- Have a different context review work than the one that wrote it.
 
-- Simplicity, directness, and concision above all.
-- Rule out as many errors as possible with strict typechecking, linting, and autoformatting.
-- Use TDD, so the outcome of a project contains its own verification.
-- Start projects with questions, not proposals.
-- For design specs, a short PRD with crisp, objective requirements is better for agents than a detailed document full of code.
-- For project plans and execution, a lightwight kanban approach (like [the Linear Method](https://linear.app/method))) is excellent for both agents and humans.
-- After planning is complete, an agent workflow should support front-to-back autonomous completion when desired.
-- The main session should be used only for planning and orchestration. All implementation and research should happen in subagents to preserve context length.
-- Review is most effective when carried out by a different agent than the one who wrote the code, and iterated until correctness.
+## Install
 
-## Setup
-
-At the moment, Gro works best in Claude Code. Support for Codex and OpenCode is coming soon.
+Gro ships the same `skills/` tree to Claude Code, Codex, and OpenCode. It contains no custom agents or lifecycle hooks.
 
 ### Claude Code
 
-```
+```text
 /plugin marketplace add vivshaw/gro
-/plugin install core@gro
-# and style@gro, extra@gro, meta@gro, research@gro
+/plugin install gro@gro
 ```
 
 ### Codex
 
-TBD!
+```bash
+codex plugin marketplace add vivshaw/gro
+codex plugin add gro@gro
+```
 
 ### OpenCode
 
-TBD!
+Add the npm package to `opencode.json`:
 
-## Using Gro
+```json
+{
+  "$schema": "https://opencode.ai/config.json",
+  "plugin": ["@vivshaw/gro"]
+}
+```
 
-Ask your agent: "How can I use Gro?"
+Restart OpenCode after changing its config.
 
-Gro is built around agent-driven skill invocation. You do not generally need to invoke skills yourself. Your agent will determine which ones are relevant based on context. A good starting point is to ask to brainstorm a project. Your agent will pick up the core RPIR workflow and walk you through it.
+## Use
 
-## What's Inside
+Describe the work normally: “plan this feature,” “implement this project plan,” “debug this failure,” or “review this branch.” The host discovers relevant skills from their descriptions. To get oriented, ask: “How can I use Gro?”
 
-- **[Core](plugins/core/README.md):** An opinionated Research -> Plan -> Implement -> Review workflow
-- **[Meta](plugins/meta/README.md):** Skills for working with agents, skills, and context
-- **[Style](plugins/style/README.md):** Coding standards & language-specific patterns, covering TypeScript, Go, Python, and Rust
-- **[Research](plugins/research/README.md):** Skills for doing research and data science tasks, including data visualizion
-- **[Extra](plugins/extra/README.md):** Miscellaneous agent hooks
+The main workflow is research, plan, implement, review. Planning produces `.gro/tasks/<project>/spec.md`, `plan.md`, and isolated issue files.
 
-Each sub-plugin's README provides more details on what exactly it does and how.
+## Contents
+
+- Workflow: design exploration, PRD writing, project planning, implementation, TDD, independent review, debugging, and branch completion.
+- Authoring: skills, agent directives, portable packages, marketplaces, and `AGENTS.md` maintenance.
+- Coding: TypeScript, React, Go, Python, Rust, PostgreSQL, testing, comments, commits, and defensive design.
+- Research and prose: codebase investigation, internet and remote-source research, technical writing, and data visualization.
+
+Every skill and its supporting resources live under `skills/`.
 
 ## Development
 
 See [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md).
 
-## You should remix Gro!
+## Remix Gro
 
-One of the best ways to make Gro (or any skill suite) work better for you is to tune it to your own workflows. Do you already have a PRD or pitch doc spec you'd like to use? Would you rather plug your agent into Jira than use text files for issue tracking? Do you prefer Zig over Rust? Would you prefer to incrementally cut PRs for each task? All totally fine! Fork this plugin and remix it into something that fits you like a glove. This is how Gro itself was originally created. Further, Gro provides skills to help you edit and maintain a skill suite. So even if you're not yet an expert, your agent can help you tweak Gro. See [the contributing guide](docs/CONTRIBUTING.md) for info that might make the process smoother.
+Tune the suite to your own workflow: swap its PRD format, issue tracker, coding standards, review policy, or language guidance. Gro includes skills for maintaining skill suites and agent directives, so the suite can help you change the suite.
+
+## Credits
+
+Gro is licensed under [CC BY-SA 4.0](LICENSE).
+
+- Material adapted from `obra/superpowers` retains its [MIT license notice](LICENSE.superpowers).
+- Material adapted from `ed3dai/ed3d-plugins` retains its [CC BY-SA 4.0 license notice](LICENSE.ed3d-plugins).
+- The bundled Inter typeface is covered by its adjacent [SIL OFL 1.1 license](skills/visualizing-data/assets/fonts/OFL.txt).

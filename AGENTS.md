@@ -1,99 +1,51 @@
 # AGENTS.md
 
-Working guide for `gro`, viv shaw's Claude Code plugin marketplace.
+Working guide for `gro`, viv shaw's portable Agent Skills package.
 
-## What this repo is
+## What This Repo Is
 
-A curated marketplace of 5 plugins, mostly forked-and-evolved from [obra/superpowers](https://github.com/obra/superpowers) (MIT) and [ed3dai/ed3d-plugins](https://github.com/ed3dai/ed3d-plugins) (CC BY-SA 4.0).
-
-Plugins included:
-
-| plugin | contents |
-|---|---|
-| `core` | brainstorm → plan → implement → review, **all** subagent definitions, research + prose skills |
-| `meta`  | skills for authoring plugins, skills, agents, marketplaces |
-| `style` | coding standards + language-specific patterns |
-| `extra` | hooks that enforce automatic good habits |
-| `research` | skills to help with research and presenting findings |
+Gro is a package containing 34 skills for research, planning, implementation, review, coding standards, prose, skill authoring, and data visualization. It's compatible with at least OpenCode, Claude Code, and Codex.
 
 ## Structure
 
-- **`core` is home to all agents.** Every subagent definition lives in `plugins/core/agents/`, generic or workflow-bound. The one exception is `meta:project-context-librarian`, which is driven by `meta:maintaining-project-context` and lives with it.
-- **`core` is also home to the workflow itself** (brainstorm → plan → implement → review), the skills that dispatch agents, and the prose skills.
-- **`meta` is home to all skills about working with skills/agents/plugins** (the self-referential layer).
-- **`style` is home to all skills about coding guidelines**, including for specific languages or frameworks.
-- **`research` is home to skills for research** — at the moment, data visualization.
-- **`extra` is home to hooks** that enforce good habits automatically. Hooks belonging to a specific workflow live with that workflow instead — `core`'s `reminder-use-generic-agents.sh`, `reminder-use-skills.sh`, and `continue-autonomous-run.py` are in `plugins/core/hooks/`.
-
-## Reference conventions
-
-**Always use `<plugin>:<identifier>` form** when referring to a skill or agent, even within the same plugin. Examples:
-
-- `` `core:researcher-codebase` `` ✓
-- `` `researcher-codebase` `` ✗ (bare, even from inside core)
-- `Dispatch core:researcher-internet with...` ✓
-- `Dispatch researcher-internet with...` ✗
-
-Applies to:
-- Backticked references
-- Bare prose mentions
-- `subagent_type` dispatch parameters
-- READMEs, comments, hook script output, everything
-
-**Explicit exceptions** (do NOT prefix):
-- Frontmatter `name:` declarations (a skill or agent declaring itself)
-- File paths like `agents/critic-code-reviewer.md` or `<skill>/SKILL.md`
-- URLs
+- `skills/`: canonical skill definitions.
+- `.claude-plugin/`: Claude Code manifest and repository marketplace.
+- `.codex-plugin/plugin.json`: Codex manifest pointing at `skills/`.
+- `opencode.js` and `package.json`: dependency-free OpenCode npm adapter and package metadata.
+- `tools/`: repository maintenance scripts.
 
 ## Licensing
 
-The whole marketplace is **CC BY-SA 4.0**. Whenever skills or plugins are forked in, ensure that you are following their licenses appropriately, and preserve those licenses. Current licenses to be aware of:
+The package is CC BY-SA 4.0. Preserve all applicable notices when importing or adapting material:
 
-- **CC BY-SA 4.0 content from ed3dai/ed3d-plugins** → `LICENSE.ed3d-plugins` in the plugin root
-- **MIT content from obra/superpowers** → `LICENSE.superpowers` in the plugin root
-- **vivshaw-original content** → top-level `LICENSE`
-- **The Inter typeface bundled in `research`** (SIL OFL 1.1) → `OFL.txt` beside the font files it covers.
+- Original content: `LICENSE`
+- Material from ed3dai/ed3d-plugins: `LICENSE.ed3d-plugins`
+- Material from obra/superpowers: `LICENSE.superpowers`
+- Inter typeface: `skills/visualizing-data/assets/fonts/OFL.txt`
 
-Every plugin's `README.md` must include a `## credits` section that names upstream sources and points at the per-plugin `LICENSE.*` files.
+Keep the README Credits section current.
 
-## Required tooling
+## Required Tooling
 
-Use gro to develop gro! The `meta` plugin contains the skills you need to work effectively in this repo.
+Use Gro to develop Gro. Relevant authoring skills include `writing-skills`, `testing-skills-with-subagents`, `writing-agent-directives`, and `managing-a-skills-package`.
 
-### Repo tooling
+The Python and browser toolchain supports data-visualization assets and repository checks. See `docs/CONTRIBUTING.md`.
 
-`tools/` holds scripts that maintain the repo rather than ship in a plugin.
+Never launch an installed browser binary directly. Use Playwright's isolated browser. On macOS, launching an installed browser executable while it is open can hand the command to the user's live browser session.
 
-**Need a browser? Drive Playwright directly, at will:** screenshot a page, click through a state, measure a layout. It launches its own browser with a throwaway profile and cannot attach to a running one. Never launch a browser binary found on the machine. On macOS, running an installed browser's executable while it is already open hands your command line to the *live* instance instead of starting a new one, which can break your user's browser session.
+## Adding Skills
 
-### Python toolchain
+1. Use `writing-skills` and `testing-skills-with-subagents`.
+2. Create `skills/<name>/SKILL.md` with Agent Skills-compatible `name` and `description` frontmatter.
+3. Keep substantive behavior portable; isolate unavoidable host behavior in a thin adapter.
+4. Use bare globally unique skill names in references.
+5. Update the README contents and preserve upstream licenses.
 
-The Python hook scripts and tools have a Nix & uv toolchain wired up at the repo root. See [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md) for the full setup and command reference. After modifying either, run `uv run pytest` before committing.
+Do not add custom agents. Put delegated behavior in a skill or adjacent prompt resource and use each host's native generic subagents.
 
-## Adding things
+## Committing And Releasing
 
-### A new skill
-
-1. Use the `meta:writing-skills` skill.
-2. Set `user-invocable: false` unless you explicitly want `/<plugin>:<skill-name>` as a slash command
-3. Cross-reference other skills/agents using the `<plugin>:<name>` form
-4. Update the plugin's `README.md` "what's inside" section
-
-### A new agent
-
-Use the `meta:creating-an-agent` skill to create the agent. Agents go in `plugins/core/agents/<agent-name>.md`.
-
-### A new plugin
-
-Only create one if it's thematically distinct from the existing 5. then:
-
-1. Choose a short, conceptually apt name (the older plugins use Greek philosophy terms; newer ones favor plain English)
-2. Use the `meta:creating-a-plugin` skill
-3. Add a bullet to the top-level `README.md` "currently in stock" list
-4. Set up `LICENSE.*` files for any forked content
-
-## Committing, Versioning, Releasing
-
-- Use [Conventional Commits](https://www.conventionalcommits.org/). Always include the scope: `feat(core): ...`, `chore(docs): ...`. Check `git log` for the scopes already in use.
-- Keep `CHANGELOG.md` up to date, following [Keep a Changelog](https://keepachangelog.com/) for what goes in it. Prefix every entry with the plugin it touches — `- **core:** ...` — and use `- **repo:** ...` for changes outside the plugins.
-- Use [Semantic Versioning](https://semver.org). All five plugins and the marketplace share one version and move together, so a breaking change anywhere bumps everything. Keep `plugins/*/.claude-plugin/plugin.json`, `.claude-plugin/marketplace.json`, and the release tag in sync. `meta:maintaining-a-marketplace` has the release checklist.
+- Use Conventional Commits with a scope, following recent history.
+- Keep `CHANGELOG.md` in Keep a Changelog format. Use `repo`, `skills`, `claude`, `codex`, or `opencode` scopes as appropriate. Keep descriptions concise.
+- Follow Semantic Versioning. Keep `.claude-plugin/plugin.json`, `.claude-plugin/marketplace.json`, `.codex-plugin/plugin.json`, `package.json`, the changelog release, and tag synchronized.
+- Use `managing-a-skills-package` for packaging and release work.

@@ -29,27 +29,20 @@ select = [
     "SIM", # flake8-simplify
 ]
 
-[tool.ruff.lint.per-file-ignores]
-# test fixtures contain long example commands (URLs with tokens, etc).
-"plugins/extra/hooks/test_*.py" = ["E501"]
-
 [tool.mypy]
 python_version = "3.11"
-files = ["plugins/core/hooks", "plugins/extra/hooks", "plugins/research/skills", "tools"]
+files = ["skills/visualizing-data/scripts", "tools"]
 warn_redundant_casts = true
 warn_unused_ignores = true
 warn_unreachable = true
 check_untyped_defs = true
 exclude = [
-    "plugins/(core|extra)/hooks/test_.*\\.py$",
-    "plugins/research/.*/test_.*\\.py$",
-    "tools/test_.*\\.py$",
+    "skills/.*/test_.*\\.py$",
+    "tools/(?:.*/)?test_.*\\.py$",
 ]
 
 [tool.pytest.ini_options]
 testpaths = [
-    "plugins/core/hooks",
-    "plugins/extra/hooks",
-    "plugins/research/skills/visualizing-data/scripts",
+    "skills/visualizing-data/scripts",
     "tools",
 ]

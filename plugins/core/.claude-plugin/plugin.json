@@ -1,9 +1,0 @@
-{
-  "name": "core",
-  "version": "5.0.0",
-  "description": "An opinionated Research -> Plan -> Implement -> Review workflow",
-  "author": {
-    "name": "vivshaw"
-  },
-  "license": "CC-BY-SA-4.0"
-}

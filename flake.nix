@@ -1,5 +1,5 @@
 {
-  # python toolchain for the hook scripts, and tool scripts in `tools/`
+  # Python toolchain for skill resources and repository tools.
   description = "python toolchain for gro";
 
   inputs = {

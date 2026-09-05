@@ -6,20 +6,32 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+## [6.0.0] - 2026-09-04
+
 ### Added
 
-- **research:** A new plugin.
-- **research:** `research:visualizing-data`, a comprehensive skill for data visualization, including a house palette, style guide, and accessibility checks.
-- **tooling:** A pinned headless browser for visual checks and Playwright automation (`uv run playwright install chromium`). In environments where the Playwright installer can't run, you can use `GRO_CHROME`.
+- **skills:** `visualizing-data`, a comprehensive skill for data visualization, including a house palette, style guide, and accessibility checks.
+- **tooling:** A pinned Playwright browser for visual checks (`uv run playwright install chromium`).
+- **codex:** A native plugin manifest for Codex.
+- **opencode:** A dependency-free npm adapter that registers Gro's canonical skill path.
 
 ### Changed
 
-- **core:** `core:using-gro` now explicitly answers "how do I use Gro?"
-- **style:** TypeScript tooling guidance updated, including stricter static analysis & TypeScript 7.
+- **repo:** BREAKING: Gro is now one package containing one canonical root `skills/` tree for Claude Code, Codex, and OpenCode. Install `gro@gro` instead of separate marketplace plugins.
+- **skills:** `using-gro` now explicitly answers “how do I use Gro?”
+- **skills:** TypeScript tooling guidance now covers stricter static analysis and TypeScript 7.
+- **skills:** Consolidated package creation and marketplace maintenance into `managing-a-skills-package`, which loads narrower authoring guidance only when needed.
+- **skills:** Merged the `creating-a-plugin` and `maintaining-a-marketplace` skills into one package lifecycle skill.
 
 ### Fixed
 
 - **tooling:** `.venv` console scripts pointed at an outdated path, breaking local tools. Now regenerated.
+
+### Removed
+
+- **repo:** BREAKING: Removed the five-plugin layout and generated per-platform copies.
+- **repo:** BREAKING: Removed custom agents, model aliases, secret-protection hooks, stop-continuation hooks, and skills about them.
+- **skills:** Removed `yoloproject` and `execute-implement-a-project-autonomously` together with their autonomous-mode documentation.
 
 ## [5.0.0] - 2026-08-24
 
