@@ -114,7 +114,7 @@ def test_portable_plugin_manifest() -> None:
 
     assert plugin["$schema"] == AGENT_PLUGIN_SCHEMA
     assert plugin.keys() == AGENT_PLUGIN_KEYS
-    assert plugin["repository"] == "https://github.com/vivshaw/loam"
+    assert plugin["repository"] == "https://github.com/rhizomatous/loam"
 
 
 def test_pi_package_registration() -> None:

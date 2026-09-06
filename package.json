@@ -27,9 +27,9 @@
   "license": "CC-BY-SA-4.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vivshaw/loam.git"
+    "url": "git+https://github.com/rhizomatous/loam.git"
   },
-  "homepage": "https://github.com/vivshaw/loam#readme",
+  "homepage": "https://github.com/rhizomatous/loam#readme",
   "pi": {
     "skills": [
       "./skills"

@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Changed
+
+- **repo:** Moved the canonical repository and plugin marketplace to `rhizomatous/loam`.
+
 ## [7.0.0] - 2026-09-06
 
 ### Added
@@ -36,7 +40,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ### Changed
 
-- **repo:** BREAKING: Renamed Gro back to Loam. Claude Code and Codex users must re-add the marketplace as `vivshaw/loam` and install `loam@loam`; OpenCode users install `@vivshaw/loam`.
+- **repo:** BREAKING: Renamed Gro back to Loam. Claude Code and Codex users must re-add the marketplace as `rhizomatous/loam` and install `loam@loam`; OpenCode users install `@vivshaw/loam`.
 - **repo:** BREAKING: Loam is now one package containing one canonical root `skills/` tree for Claude Code, Codex, and OpenCode. Install `loam@loam` instead of separate marketplace plugins.
 - **skills:** Merged `project-getting-started` into `project-writing-plan`, which now owns planning input selection and execution handoff.
 - **skills:** Implementation now offers a worktree, new branch, or current branch and preserves provenance-aware cleanup behavior.

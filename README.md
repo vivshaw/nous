@@ -22,14 +22,14 @@ Install this repository with any client that supports the [Agent Plugins](https:
 ### Claude Code
 
 ```text
-/plugin marketplace add vivshaw/loam
+/plugin marketplace add rhizomatous/loam
 /plugin install loam@loam
 ```
 
 ### Codex
 
 ```bash
-codex plugin marketplace add vivshaw/loam
+codex plugin marketplace add rhizomatous/loam
 codex plugin add loam@loam
 ```
 
@@ -48,7 +48,7 @@ Add the npm package to `opencode.json`:
 ### Pi
 
 ```bash
-pi install git:github.com/vivshaw/loam
+pi install git:github.com/rhizomatous/loam
 # or...
 pi install npm:@vivshaw/loam
 ```
