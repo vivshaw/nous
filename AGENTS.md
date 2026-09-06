@@ -4,7 +4,7 @@ Working guide for `loam`, viv shaw's portable Agent Skills package.
 
 ## What This Repo Is
 
-Loam is a package containing 27 skills for research, planning, implementation, review, coding standards, prose, and data visualization. It's compatible with Agent Plugins clients, Claude Code, Codex, OpenCode, and Pi. Authoring and project-context skills live in the separate Loam Meta expansion pack.
+Loam is a package containing 15 skills for research, planning, implementation, review, prose, and data visualization. It's compatible with Agent Plugins clients, Claude Code, Codex, OpenCode, and Pi. Authoring and project-context skills live in Loam Meta; coding standards and language-specific guidance live in Loam Code.
 
 ## Structure
 
@@ -29,7 +29,7 @@ Keep the README Credits section current.
 
 ## Required Tooling
 
-Use Loam and the Loam Meta expansion pack to develop Loam. Relevant Loam Meta skills include `writing-skills`, `testing-skills-with-subagents`, `writing-agent-directives`, and `managing-a-skills-package`.
+Use Loam with its Loam Meta and Loam Code expansion packs to develop Loam. Loam Meta provides the authoring and packaging skills; Loam Code provides the coding, testing, comment, and commit guidance.
 
 The Python and browser toolchain supports data-visualization assets and repository checks. See `docs/CONTRIBUTING.md`.
 

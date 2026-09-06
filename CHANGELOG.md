@@ -16,10 +16,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 ### Changed
 
 - **skills:** Project wrap-up now uses a lightweight context-maintainer prompt instead of depending on a separate skill.
+- **skills:** Core implementation prompts now use Loam Code guidance when it is installed and fall back to repository guidance when it is absent.
 
 ### Removed
 
 - **repo:** BREAKING: Moved the seven skill-authoring and project-context skills to the separate Loam Meta expansion pack. Install Loam Meta to continue using them.
+- **repo:** BREAKING: Moved the 12 coding-standard, language, testing, comment, and commit skills to the separate Loam Code expansion pack. Install Loam Code to continue using them.
 
 ## [6.0.0] - 2026-09-05
 

@@ -2,7 +2,7 @@
 
 Loam has one canonical `skills/` tree and thin package metadata for Agent Plugins clients, Claude Code, Codex, OpenCode, and Pi.
 
-Use Loam and the separate Loam Meta expansion pack to develop Loam. Relevant Loam Meta skills include `writing-skills`, `testing-skills-with-subagents`, `writing-agent-directives`, and `managing-a-skills-package`.
+Use Loam with its separate Loam Meta and Loam Code expansion packs. Loam Meta provides the authoring and packaging skills; Loam Code provides the coding, testing, comment, and commit guidance.
 
 ## Prerequisites
 

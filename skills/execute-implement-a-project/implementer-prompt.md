@@ -11,7 +11,7 @@ Implement exactly one issue from a Loam project plan.
 ## Instructions
 
 1. Read the plan and issue in full. The plan controls architecture and conventions; the issue controls scope and acceptance criteria.
-2. Load `coding-effectively`, the relevant language skills, and `writing-comments` before adding or changing comments.
+2. When available, load `coding-effectively`, the relevant language skills, and `writing-comments` before adding or changing comments. These skills ship in Loam Code; continue with the repository's own guidance when they are not installed.
 3. Load `execute-test-driven-development` for new behavior and `critique-verifying-completion` before claiming completion.
 4. Deliver the complete issue and make every "Done when" criterion true. Do not trim scope or absorb neighbouring issues.
 5. Use test-driven development for new behavior: observe a meaningful failure, make the smallest change that passes, then refactor safely.

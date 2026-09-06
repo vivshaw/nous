@@ -48,7 +48,7 @@ def frontmatter(path: pathlib.Path) -> dict[str, str]:
 
 def test_canonical_skill_inventory() -> None:
     skill_files = sorted(SKILLS.glob("*/SKILL.md"))
-    assert len(skill_files) == 27
+    assert len(skill_files) == 15
 
     names = []
     for skill_file in skill_files:
@@ -91,13 +91,19 @@ def test_package_identity_is_synchronized() -> None:
     assert codex_plugin["name"] == "loam"
     assert marketplace["name"] == "loam"
     assert codex_marketplace["name"] == "loam"
-    assert {plugin["name"] for plugin in marketplace["plugins"]} == {"loam", "loam-meta"}
+    assert {plugin["name"] for plugin in marketplace["plugins"]} == {
+        "loam",
+        "loam-code",
+        "loam-meta",
+    }
     assert {plugin["name"] for plugin in codex_marketplace["plugins"]} == {
         "loam",
+        "loam-code",
         "loam-meta",
     }
     assert marketplace["renames"]["gro"] == "loam"
     assert marketplace["renames"]["meta"] == "loam-meta"
+    assert marketplace["renames"]["style"] == "loam-code"
 
 
 def test_portable_plugin_manifest() -> None:
@@ -130,5 +136,17 @@ def test_distribution_shape_and_licenses() -> None:
         "writing-agent-directives",
         "writing-agents-md-files",
         "writing-skills",
+        "coding-effectively",
+        "defense-in-depth",
+        "howto-code-in-go",
+        "howto-code-in-python",
+        "howto-code-in-rust",
+        "howto-code-in-typescript",
+        "howto-develop-with-postgres",
+        "programming-in-react",
+        "property-based-testing",
+        "writing-comments",
+        "writing-git-commits",
+        "writing-good-tests",
     }
     assert not extracted & {path.parent.name for path in SKILLS.glob("*/SKILL.md")}

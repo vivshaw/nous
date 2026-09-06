@@ -1,6 +1,6 @@
 # Loam
 
-Loam is a portable suite of Agent Skills for software development. It grew from [obra/superpowers](https://github.com/obra/superpowers) and [ed3dai/ed3d-plugins](https://github.com/ed3dai/ed3d-plugins), with an emphasis on lightweight planning, independent review loops, strict coding standards, clear prose, and durable project state.
+Loam is a portable suite of Agent Skills for software development. It grew from [obra/superpowers](https://github.com/obra/superpowers) and [ed3dai/ed3d-plugins](https://github.com/ed3dai/ed3d-plugins), with an emphasis on lightweight planning, independent review loops, clear prose, and durable project state.
 
 ## Principles
 
@@ -62,7 +62,6 @@ The main workflow is research, plan, implement, review. Planning produces `.loam
 ## Contents
 
 - Workflow: design exploration, PRD writing, project planning, implementation, TDD, independent review, debugging, and branch completion.
-- Coding: TypeScript, React, Go, Python, Rust, PostgreSQL, testing, comments, commits, and defensive design.
 - Research and prose: codebase investigation, internet and remote-source research, technical writing, and data visualization.
 
 Every skill and its supporting resources live under `skills/`.
@@ -70,6 +69,8 @@ Every skill and its supporting resources live under `skills/`.
 ## Expansion Packs
 
 [Loam Meta](https://github.com/rhizomatous/loam-meta) provides the authoring skills for agent directives, Agent Skills, portable packages, marketplaces, and `AGENTS.md` maintenance. It installs independently and is also listed in Loam's Claude Code and Codex marketplaces.
+
+[Loam Code](https://github.com/rhizomatous/loam-code) provides coding standards and language-specific guidance for TypeScript, React, Go, Python, Rust, PostgreSQL, testing, comments, commits, and defensive design. Install it alongside Loam to retain the former bundled coding guidance; it is also listed in Loam's Claude Code and Codex marketplaces.
 
 ## The `.loam` directory
 
