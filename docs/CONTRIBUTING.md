@@ -2,7 +2,7 @@
 
 Loam has one canonical `skills/` tree and thin package metadata for Agent Plugins clients, Claude Code, Codex, OpenCode, and Pi.
 
-Use Loam with its separate Loam Meta and Loam Code expansion packs. Loam Meta provides the authoring and packaging skills; Loam Code provides the coding, testing, comment, and commit guidance.
+Use Loam with its separate Loam Meta, Loam Code, and Loam Research expansion packs.
 
 ## Prerequisites
 
@@ -15,14 +15,11 @@ Enter the environment with direnv or `nix develop`, then run `uv sync --all-grou
 
 | Command | Purpose |
 |---|---|
-| `uv run pytest` | Run Python and browser-backed tests |
+| `uv run pytest` | Run repository tests |
 | `uv run ruff check skills/ tools/` | Lint Python |
 | `uv run ruff format --check skills/ tools/` | Check formatting |
 | `uv run mypy` | Typecheck Python |
-| `uv run python tools/visualizing-data/build_swatches.py --check` | Verify the generated visualization reference |
 | `npm pack --dry-run` | Inspect OpenCode package contents |
-
-Install Playwright's isolated Chromium with `uv run playwright install chromium` when browser tests request it.
 
 ## Skills
 

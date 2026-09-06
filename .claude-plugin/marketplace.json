@@ -12,14 +12,14 @@
     "extra": "loam",
     "gro": "loam",
     "meta": "loam-meta",
-    "research": "loam",
+    "research": "loam-research",
     "style": "loam-code"
   },
   "plugins": [
     {
       "name": "loam",
       "source": "./",
-      "description": "Portable workflow skills for research, planning, implementation, review, prose, and data visualization",
+      "description": "Portable workflow skills for research, planning, implementation, debugging, and review",
       "version": "7.0.0"
     },
     {
@@ -38,6 +38,15 @@
         "repo": "rhizomatous/loam-code"
       },
       "description": "Portable coding standards and language-specific patterns for coding agents",
+      "version": "1.0.0"
+    },
+    {
+      "name": "loam-research",
+      "source": {
+        "source": "github",
+        "repo": "rhizomatous/loam-research"
+      },
+      "description": "Portable technical writing and data-visualization skills for coding agents",
       "version": "1.0.0"
     }
   ]

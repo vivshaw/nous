@@ -4,7 +4,7 @@ Working guide for `loam`, viv shaw's portable Agent Skills package.
 
 ## What This Repo Is
 
-Loam is a package containing 15 skills for research, planning, implementation, review, prose, and data visualization. It's compatible with Agent Plugins clients, Claude Code, Codex, OpenCode, and Pi. Authoring and project-context skills live in Loam Meta; coding standards and language-specific guidance live in Loam Code.
+Loam is a package containing 13 skills for research, planning, implementation, debugging, and review. It's compatible with Agent Plugins clients, Claude Code, Codex, OpenCode, and Pi. Authoring and project-context skills live in Loam Meta; coding guidance lives in Loam Code; technical prose and data visualization live in Loam Research.
 
 ## Structure
 
@@ -23,17 +23,14 @@ The package is CC BY-SA 4.0. Preserve all applicable notices when importing or a
 - Original content: `LICENSE`
 - Material from ed3dai/ed3d-plugins: `LICENSE.ed3d-plugins`
 - Material from obra/superpowers: `LICENSE.superpowers`
-- Inter typeface: `skills/visualizing-data/assets/fonts/OFL.txt`
 
 Keep the README Credits section current.
 
 ## Required Tooling
 
-Use Loam with its Loam Meta and Loam Code expansion packs to develop Loam. Loam Meta provides the authoring and packaging skills; Loam Code provides the coding, testing, comment, and commit guidance.
+Use Loam with its Loam Meta, Loam Code, and Loam Research expansion packs to develop Loam. Loam Meta provides authoring and packaging skills; Loam Code provides coding guidance; Loam Research owns technical prose and visualization assets.
 
-The Python and browser toolchain supports data-visualization assets and repository checks. See `docs/CONTRIBUTING.md`.
-
-Never launch an installed browser binary directly. Use Playwright's isolated browser. On macOS, launching an installed browser executable while it is open can hand the command to the user's live browser session.
+The Python toolchain supports repository checks. See `docs/CONTRIBUTING.md`.
 
 ## Adding Skills
 

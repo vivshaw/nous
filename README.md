@@ -62,7 +62,7 @@ The main workflow is research, plan, implement, review. Planning produces `.loam
 ## Contents
 
 - Workflow: design exploration, PRD writing, project planning, implementation, TDD, independent review, debugging, and branch completion.
-- Research and prose: codebase investigation, internet and remote-source research, technical writing, and data visualization.
+- Research: codebase investigation plus internet and remote-source research.
 
 Every skill and its supporting resources live under `skills/`.
 
@@ -71,6 +71,8 @@ Every skill and its supporting resources live under `skills/`.
 [Loam Meta](https://github.com/rhizomatous/loam-meta) provides the authoring skills for agent directives, Agent Skills, portable packages, marketplaces, and `AGENTS.md` maintenance. It installs independently and is also listed in Loam's Claude Code and Codex marketplaces.
 
 [Loam Code](https://github.com/rhizomatous/loam-code) provides coding standards and language-specific guidance for TypeScript, React, Go, Python, Rust, PostgreSQL, testing, comments, commits, and defensive design. Install it alongside Loam to retain the former bundled coding guidance; it is also listed in Loam's Claude Code and Codex marketplaces.
+
+[Loam Research](https://github.com/rhizomatous/loam-research) provides technical-writing and data-visualization guidance, including the house palette, accessibility rules, validation scripts, and reference assets. It installs independently and is also listed in Loam's Claude Code and Codex marketplaces.
 
 ## The `.loam` directory
 
@@ -90,4 +92,3 @@ Loam is licensed under [CC BY-SA 4.0](LICENSE).
 
 - Material adapted from `obra/superpowers` retains its [MIT license notice](LICENSE.superpowers).
 - Material adapted from `ed3dai/ed3d-plugins` retains its [CC BY-SA 4.0 license notice](LICENSE.ed3d-plugins).
-- The bundled Inter typeface is covered by its adjacent [SIL OFL 1.1 license](skills/visualizing-data/assets/fonts/OFL.txt).

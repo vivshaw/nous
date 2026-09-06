@@ -48,7 +48,7 @@ def frontmatter(path: pathlib.Path) -> dict[str, str]:
 
 def test_canonical_skill_inventory() -> None:
     skill_files = sorted(SKILLS.glob("*/SKILL.md"))
-    assert len(skill_files) == 15
+    assert len(skill_files) == 13
 
     names = []
     for skill_file in skill_files:
@@ -95,15 +95,18 @@ def test_package_identity_is_synchronized() -> None:
         "loam",
         "loam-code",
         "loam-meta",
+        "loam-research",
     }
     assert {plugin["name"] for plugin in codex_marketplace["plugins"]} == {
         "loam",
         "loam-code",
         "loam-meta",
+        "loam-research",
     }
     assert marketplace["renames"]["gro"] == "loam"
     assert marketplace["renames"]["meta"] == "loam-meta"
     assert marketplace["renames"]["style"] == "loam-code"
+    assert marketplace["renames"]["research"] == "loam-research"
 
 
 def test_portable_plugin_manifest() -> None:
@@ -127,7 +130,6 @@ def test_distribution_shape_and_licenses() -> None:
     assert not (ROOT / "hooks").exists()
     for license_file in ("LICENSE", "LICENSE.ed3d-plugins", "LICENSE.superpowers"):
         assert (ROOT / license_file).is_file()
-    assert (SKILLS / "visualizing-data/assets/fonts/OFL.txt").is_file()
     extracted = {
         "maintaining-project-context",
         "managing-a-skills-package",
@@ -148,5 +150,7 @@ def test_distribution_shape_and_licenses() -> None:
         "writing-comments",
         "writing-git-commits",
         "writing-good-tests",
+        "prose-writing-for-a-technical-audience",
+        "visualizing-data",
     }
     assert not extracted & {path.parent.name for path in SKILLS.glob("*/SKILL.md")}

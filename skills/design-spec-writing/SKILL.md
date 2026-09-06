@@ -104,7 +104,7 @@ The left column stays true regardless of how it's built. The right column is an 
 
 **Glossary:** domain terms and third-party concepts a reader needs. Skip what's obvious to any engineer.
 
-Write it all using `prose-writing-for-a-technical-audience`: direct, specific, no throat-clearing, honest about unknowns.
+When Loam Research is installed, use `prose-writing-for-a-technical-audience`. Otherwise write directly and specifically, omit throat-clearing, and be honest about unknowns.
 
 ## Validate the requirements
 

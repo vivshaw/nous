@@ -24,7 +24,7 @@ Examples:
 - Bug investigation: use `explore-systematic-debugging`.
 - Completion claim: use `critique-verifying-completion`.
 
-Loam Code supplies coding, language, testing, comment, and commit guidance. Loam Meta supplies skill-authoring, directive, packaging, and project-context guidance. The expansion packs install independently; load their skills when present.
+Loam Code supplies coding, language, testing, comment, and commit guidance. Loam Meta supplies skill-authoring, directive, packaging, and project-context guidance. Loam Research supplies technical-writing and data-visualization guidance. The expansion packs install independently; load their skills when present.
 
 ## Delegation
 
@@ -40,7 +40,7 @@ Briefly state which skill is guiding substantial work and why. Do not turn routi
 
 Keep the answer under 200 words:
 
-1. Loam is an opinionated collection of portable skills for planning, implementation, debugging, review, writing, and data visualization, with separately installed Code and Meta expansion packs.
+1. Loam is an opinionated collection of portable workflow skills for planning, implementation, debugging, and review, with separately installed Code, Meta, and Research expansion packs.
 2. Skills are discovered by the host and loaded when their descriptions match the work; users rarely need to invoke one manually.
 3. The main workflow is research, plan, implement, review. It produces a short spec, a milestone plan, isolated implementation tasks, and review loops that continue until clean.
 

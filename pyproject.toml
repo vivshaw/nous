@@ -7,7 +7,6 @@ requires-python = ">=3.11"
 [dependency-groups]
 dev = [
     "mypy>=1.13",
-    "playwright>=1.62.0",
     "pytest>=8.3",
     "ruff>=0.8",
 ]
@@ -31,7 +30,7 @@ select = [
 
 [tool.mypy]
 python_version = "3.11"
-files = ["skills/visualizing-data/scripts", "tools"]
+files = ["tools"]
 warn_redundant_casts = true
 warn_unused_ignores = true
 warn_unreachable = true
@@ -42,7 +41,4 @@ exclude = [
 ]
 
 [tool.pytest.ini_options]
-testpaths = [
-    "skills/visualizing-data/scripts",
-    "tools",
-]
+testpaths = ["tools"]

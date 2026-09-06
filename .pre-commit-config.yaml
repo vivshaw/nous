@@ -21,10 +21,3 @@ repos:
         language: system
         pass_filenames: false
         files: ^(skills/|tools/|\.claude-plugin/|\.codex-plugin/|package\.json$|CHANGELOG\.md$|LICENSE(?:\..*)?$)
-
-      - id: swatches-up-to-date
-        name: swatches.html matches its generator
-        entry: uv run python tools/visualizing-data/build_swatches.py --check
-        language: system
-        pass_filenames: false
-        files: ^(tools/visualizing-data/build_swatches\.py|skills/visualizing-data/assets/swatches\.html)$
