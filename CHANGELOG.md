@@ -6,6 +6,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Added
+
+- **repo:** A portable Agent Plugins manifest for clients that implement the open package format.
+- **pi:** Native Git and npm package discovery through an explicit `pi.skills` manifest.
+
+### Changed
+
+- **skills:** Project wrap-up now uses a lightweight context-maintainer prompt instead of depending on a separate skill.
+
+### Removed
+
+- **repo:** BREAKING: Moved the agent-related a separate Loam Meta expansion pack.
+
 ## [6.0.0] - 2026-09-05
 
 ### Added

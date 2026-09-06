@@ -48,7 +48,7 @@ If review exceeds context limits, split the commit range into logical sections r
 
 Work the plan's wrap-up checkboxes in order:
 
-1. Delegate project-context maintenance to a fresh generic subagent. Give it the base commit, current `HEAD`, working directory, and tell it to load `maintaining-project-context`.
+1. Delegate project-context maintenance to a fresh generic subagent. Give it the adjacent `context-maintainer-prompt.md`, base commit, current `HEAD`, and working directory.
 2. Run `critique-reviewing-code` over the full project range. Also verify that every spec requirement belongs to a milestone or the deferred list, and flag deferred P10 requirements.
 3. Delegate test analysis using the adjacent `test-analyst-prompt.md`. If it fails, delegate the missing-test work to a fresh implementation subagent with the complete analysis and relevant plan paths, then repeat. Write the passing human test plan beside `plan.md` as `<plan-directory>/test-plan.md`.
 4. Summarize each milestone, review cycles, verification evidence, and any compromise or unrun check.

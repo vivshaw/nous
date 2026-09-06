@@ -11,7 +11,7 @@
     "core": "loam",
     "extra": "loam",
     "gro": "loam",
-    "meta": "loam",
+    "meta": "loam-meta",
     "research": "loam",
     "style": "loam"
   },
@@ -21,6 +21,15 @@
       "source": "./",
       "description": "Portable workflow skills for research, planning, implementation, review, coding, prose, and data visualization",
       "version": "6.0.0"
+    },
+    {
+      "name": "loam-meta",
+      "source": {
+        "source": "github",
+        "repo": "vivshaw/loam-meta"
+      },
+      "description": "Portable skills for authoring and maintaining agent skills, directives, packages, and project context",
+      "version": "1.0.0"
     }
   ]
 }

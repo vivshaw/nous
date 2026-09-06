@@ -10,15 +10,18 @@
   "files": [
     "skills",
     "opencode.js",
+    "plugin.json",
     "LICENSE",
     "LICENSE.ed3d-plugins",
     "LICENSE.superpowers"
   ],
   "keywords": [
+    "agent-plugins",
     "agent-skills",
     "claude-code",
     "codex",
-    "opencode"
+    "opencode",
+    "pi-package"
   ],
   "author": "vivshaw",
   "license": "CC-BY-SA-4.0",
@@ -27,6 +30,11 @@
     "url": "git+https://github.com/vivshaw/loam.git"
   },
   "homepage": "https://github.com/vivshaw/loam#readme",
+  "pi": {
+    "skills": [
+      "./skills"
+    ]
+  },
   "engines": {
     "node": ">=18"
   }

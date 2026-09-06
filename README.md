@@ -13,7 +13,11 @@ Loam is a portable suite of Agent Skills for software development. It grew from 
 
 ## Install
 
-Loam ships the same `skills/` tree to Claude Code, Codex, and OpenCode. It contains no custom agents or lifecycle hooks.
+Loam ships the same `skills/` tree to Agent Plugins clients, Claude Code, Codex, OpenCode, and Pi. It contains no custom agents or lifecycle hooks.
+
+### Agent Plugins
+
+Install this repository with any client that supports the [Agent Plugins](https://agent-plugins.org/) format.
 
 ### Claude Code
 
@@ -40,7 +44,14 @@ Add the npm package to `opencode.json`:
 }
 ```
 
-Restart OpenCode after changing its config.
+
+### Pi
+
+```bash
+pi install git:github.com/vivshaw/loam
+# or...
+pi install npm:@vivshaw/loam
+```
 
 ## Use
 
@@ -51,11 +62,14 @@ The main workflow is research, plan, implement, review. Planning produces `.loam
 ## Contents
 
 - Workflow: design exploration, PRD writing, project planning, implementation, TDD, independent review, debugging, and branch completion.
-- Authoring: skills, agent directives, portable packages, marketplaces, and `AGENTS.md` maintenance.
 - Coding: TypeScript, React, Go, Python, Rust, PostgreSQL, testing, comments, commits, and defensive design.
 - Research and prose: codebase investigation, internet and remote-source research, technical writing, and data visualization.
 
 Every skill and its supporting resources live under `skills/`.
+
+## Expansion Packs
+
+[Loam Meta](https://github.com/vivshaw/loam-meta) provides the authoring skills for agent directives, Agent Skills, portable packages, marketplaces, and `AGENTS.md` maintenance. It installs independently and is also listed in Loam's Claude Code and Codex marketplaces.
 
 ## The `.loam` directory
 
@@ -67,7 +81,7 @@ See [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md).
 
 ## Remix Loam
 
-Tune the suite to your own workflow: swap its PRD format, issue tracker, coding standards, review policy, or language guidance. Loam includes skills for maintaining skill suites and agent directives, so the suite can help you change the suite.
+Tune the suite to your own workflow: swap its PRD format, issue tracker, coding standards, review policy, or language guidance. Install Loam Meta when changing skills, agent directives, or package adapters.
 
 ## Credits
 

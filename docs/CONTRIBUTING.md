@@ -1,8 +1,8 @@
 # Developing Loam
 
-Loam has one canonical `skills/` tree and thin package metadata for Claude Code, Codex, and OpenCode.
+Loam has one canonical `skills/` tree and thin package metadata for Agent Plugins clients, Claude Code, Codex, OpenCode, and Pi.
 
-Use Loam to develop Loam. Relevant authoring skills include `writing-skills`, `testing-skills-with-subagents`, `writing-agent-directives`, and `managing-a-skills-package`.
+Use Loam and the separate Loam Meta expansion pack to develop Loam. Relevant Loam Meta skills include `writing-skills`, `testing-skills-with-subagents`, `writing-agent-directives`, and `managing-a-skills-package`.
 
 ## Prerequisites
 
@@ -32,8 +32,10 @@ Canonical skill prose should name capabilities, not host-specific tool or agent 
 
 ## Packaging
 
+- Agent Plugins clients load the root `plugin.json` and canonical `skills/` tree.
 - Claude Code discovers root `skills/` through `.claude-plugin/plugin.json`.
 - Codex uses `.codex-plugin/plugin.json` and the same root tree.
 - OpenCode loads `@vivshaw/loam`; `opencode.js` appends the packaged `skills/` path to live config.
+- Pi installs the Git repository or npm package and reads `pi.skills` from `package.json`.
 
 After changing `opencode.js`, restart OpenCode before testing because plugins are loaded at startup.

@@ -1,0 +1,32 @@
+{
+  "name": "loam",
+  "interface": {
+    "displayName": "Loam"
+  },
+  "plugins": [
+    {
+      "name": "loam",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    },
+    {
+      "name": "loam-meta",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/vivshaw/loam-meta.git"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}
