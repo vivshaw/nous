@@ -1,19 +1,19 @@
 ---
 name: execute-implement-a-project
-description: Use when executing a Gro project plan milestone by milestone with isolated implementation subagents, requirement verification, and review loops.
+description: Use when executing a Loam project plan milestone by milestone with isolated implementation subagents, requirement verification, and review loops.
 ---
 
 # Implementing a Project
 
 Execute a plan milestone by milestone. Each implementation subagent receives exactly `plan.md` plus one issue file. The plan supplies shared architecture and conventions; the issue supplies scope and acceptance criteria.
 
-If no validated plan exists, use `project-writing-plan` first. If the user has not identified the plan, list `.gro/projects/` and ask which one to execute.
+If no validated plan exists, use `project-writing-plan` first. If the user has not identified the plan, list `.loam/projects/` and ask which one to execute.
 
 ## Prepare
 
 1. Read `plan.md` in full and resume at the first unchecked item.
 2. Use `execute-setting-up-a-working-tree` to choose and prepare the implementation checkout.
-3. Re-read `plan.md` from that checkout and record absolute paths to the plan, issue directory, spec, and optional `.gro/project-plan-guidance.md`.
+3. Re-read `plan.md` from that checkout and record absolute paths to the plan, issue directory, spec, and optional `.loam/project-plan-guidance.md`.
 4. Use the host's task tracker, if available, for milestone issue work, milestone verification, and wrap-up. `plan.md` remains the durable source of truth.
 5. If `plan.md` has no implementation base, record the current commit there before changing code. Use it for the final full-project review.
 
@@ -50,7 +50,7 @@ Work the plan's wrap-up checkboxes in order:
 
 1. Delegate project-context maintenance to a fresh generic subagent. Give it the base commit, current `HEAD`, working directory, and tell it to load `maintaining-project-context`.
 2. Run `critique-reviewing-code` over the full project range. Also verify that every spec requirement belongs to a milestone or the deferred list, and flag deferred P10 requirements.
-3. Delegate test analysis using the adjacent `test-analyst-prompt.md`. If it fails, delegate the missing-test work to a fresh implementation subagent with the complete analysis and relevant plan paths, then repeat. Write the passing human test plan to `.gro/projects/<slug>/test-plan.md`.
+3. Delegate test analysis using the adjacent `test-analyst-prompt.md`. If it fails, delegate the missing-test work to a fresh implementation subagent with the complete analysis and relevant plan paths, then repeat. Write the passing human test plan beside `plan.md` as `<plan-directory>/test-plan.md`.
 4. Summarize each milestone, review cycles, verification evidence, and any compromise or unrun check.
 5. Use `execute-finishing-a-development-branch`. Do not merge or deploy without the user's explicit choice.
 

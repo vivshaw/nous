@@ -16,7 +16,7 @@ Decide where implementation is going to happen, and put it there.
 - `execute-implement-a-project` is about to start
 
 **Don't use when:**
-- Design or planning is still in progress. Planning writes markdown into `.gro/` and commits nothing — there's nothing yet to isolate, and the plan is carried across at Step 4 if it needs to be
+- Design or planning is still in progress. Planning writes markdown into `.loam/` and commits nothing — there's nothing yet to isolate, and the plan is carried across at Step 4 if it needs to be
 
 ## 1. Detect where you already are
 
@@ -55,7 +55,7 @@ Take the slug from the plan directory name — everything after `YYYY-MM-DD-`.
 
 ## 3. Carry out the choice
 
-For a choice that creates a branch or worktree, first resolve the remote default ref:
+For the worktree choice, first resolve the remote default ref:
 
 ```bash
 DEFAULT_REF=$(git symbolic-ref --quiet --short refs/remotes/origin/HEAD 2>/dev/null)
@@ -92,10 +92,10 @@ If creation fails on a permission error, a sandbox is blocking it. Say so and as
 ### 3b. A new branch here
 
 ```bash
-git checkout -b "<branch-name>" "<base-ref>"
+git switch -c "<branch-name>"
 ```
 
-Announce the branch and what it was cut from. If creation fails, report why and ask whether to use the current branch instead. Then go to Step 5.
+This preserves the current checkout's commits by branching from `HEAD`. Announce the branch and the commit it was cut from. If creation fails, report why and ask whether to use the current branch instead. Then go to Step 5.
 
 ### 3c. This checkout
 
@@ -103,13 +103,13 @@ Nothing to do. Say which branch or detached commit the work will land on, so it'
 
 ## 4. Carry the plan across
 
-**Worktree only.** If `plan.md` and `issues/` already exist in this worktree, leave them in place and continue to Step 5. Otherwise, a fresh worktree needs the planning files copied from the checkout where planning occurred because `.gro/` may be untracked.
+**Worktree only.** If `plan.md` and `issues/` already exist in this worktree, leave them in place and continue to Step 5. Otherwise, a fresh worktree needs the planning files copied from the checkout where planning occurred because `.loam/` may be untracked.
 
 ```bash
-mkdir -p .gro/projects
-cp -R "<main-checkout>/.gro/projects/<date>-<slug>" .gro/projects/
-cp "<main-checkout>/.gro/project-plan-guidance.md" .gro/ 2>/dev/null
-cp "<main-checkout>/.gro/design-spec-guidance.md" .gro/ 2>/dev/null
+mkdir -p .loam/projects
+cp -R "<main-checkout>/.loam/projects/<date>-<slug>" .loam/projects/
+cp "<main-checkout>/.loam/project-plan-guidance.md" .loam/ 2>/dev/null
+cp "<main-checkout>/.loam/design-spec-guidance.md" .loam/ 2>/dev/null
 ```
 
 Confirm `plan.md` and `issues/` arrived before going further. **Leave the originals where they are.** They're your partner's copy of the design work, and it should survive whatever happens to this worktree.
@@ -133,7 +133,7 @@ Run the test suite either way, and report the working tree, the branch, and the 
 | Worktree chosen, no native tool | Git fallback from the approved base into `.worktrees/`, ignore-gated |
 | Worktree created | Copy the plan directory in, leave the originals |
 | Permission error on creation | Report it and ask how to proceed |
-| New branch chosen | Resolve its base ref, then Step 5 |
+| New branch chosen | Branch from the current `HEAD`, then Step 5 |
 | Baseline tests fail | Stop and report before implementing |
 
 ## Common Rationalizations
@@ -146,7 +146,7 @@ Run the test suite either way, and report the working tree, the branch, and the 
 | "`git worktree add` is right here and I know it works" | The native tool owns placement and cleanup. Bypassing it strands a worktree your harness can't remove. |
 | "The tool says only when the user explicitly asks" | Step 2 asked and they chose it. That is the ask. |
 | "`.worktrees/` is surely ignored already" | Run `git check-ignore`. Unignored, it commits the whole tree into itself. |
-| "The plan is in git, it'll be there" | `.gro/` may be untracked, and the worktree branches from a commit either way. Copy it. |
+| "The plan is in git, it'll be there" | `.loam/` may be untracked, and the worktree branches from a commit either way. Copy it. |
 | "I'll move the plan so the main checkout stays clean" | Copy it. Those files are your partner's record of the design, and they outlive this branch. |
 | "Fresh checkout, baseline tests are a formality" | It's a different base commit than the one you were on. Run them. |
 

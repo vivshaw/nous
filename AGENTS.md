@@ -1,10 +1,10 @@
 # AGENTS.md
 
-Working guide for `gro`, viv shaw's portable Agent Skills package.
+Working guide for `loam`, viv shaw's portable Agent Skills package.
 
 ## What This Repo Is
 
-Gro is a package containing 34 skills for research, planning, implementation, review, coding standards, prose, skill authoring, and data visualization. It's compatible with at least OpenCode, Claude Code, and Codex.
+Loam is a package containing 34 skills for research, planning, implementation, review, coding standards, prose, skill authoring, and data visualization. It's compatible with at least OpenCode, Claude Code, and Codex.
 
 ## Structure
 
@@ -27,7 +27,7 @@ Keep the README Credits section current.
 
 ## Required Tooling
 
-Use Gro to develop Gro. Relevant authoring skills include `writing-skills`, `testing-skills-with-subagents`, `writing-agent-directives`, and `managing-a-skills-package`.
+Use Loam to develop Loam. Relevant authoring skills include `writing-skills`, `testing-skills-with-subagents`, `writing-agent-directives`, and `managing-a-skills-package`.
 
 The Python and browser toolchain supports data-visualization assets and repository checks. See `docs/CONTRIBUTING.md`.
 

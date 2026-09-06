@@ -4,6 +4,6 @@
   - static pass: ratchet up linter, typechecker, formatter to max. circular dep checker. knip. then fix anything exposed.
   - tests pass: add unit tests if missing.
   - code pass: checklist for every file.
-  - arch pass: duplication, complexity, idiomatic code, modularity. ruthlessly pursue simplicity, directness, and concision above all else. use the Gro code review skill
+  - arch pass: duplication, complexity, idiomatic code, modularity. ruthlessly pursue simplicity, directness, and concision above all else. use the Loam code review skill
 - further principles/You might like if... rework
 - harness managed worktrees too complex?

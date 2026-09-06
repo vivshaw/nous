@@ -1,22 +1,23 @@
 {
-  "name": "gro",
+  "name": "loam",
   "owner": {
     "name": "vivshaw"
   },
   "metadata": {
-    "description": "Gro, vivshaw's portable workflow skill suite",
+    "description": "Loam, vivshaw's portable workflow skill suite",
     "version": "6.0.0"
   },
   "renames": {
-    "core": "gro",
-    "extra": "gro",
-    "meta": "gro",
-    "research": "gro",
-    "style": "gro"
+    "core": "loam",
+    "extra": "loam",
+    "gro": "loam",
+    "meta": "loam",
+    "research": "loam",
+    "style": "loam"
   },
   "plugins": [
     {
-      "name": "gro",
+      "name": "loam",
       "source": "./",
       "description": "Portable workflow skills for research, planning, implementation, review, coding, prose, and data visualization",
       "version": "6.0.0"

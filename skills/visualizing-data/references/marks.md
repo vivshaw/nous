@@ -14,7 +14,7 @@ For a data visualization, the considered look is a handful of fixed specs plus t
 
 Rounding only the data end of bars is important. The rounded end says "this is where the value stops". The square end says "this is where zero is". If both ends were rounded, the bar would look like it floats away from its baseline.
 
-Adjacent marks of the same type should all the same width. 
+Adjacent marks of the same type should all be the same width.
 
 ## Spacers
 
@@ -26,9 +26,9 @@ Never draw a border around a mark to separate it from its neighbour. A stroke ad
 
 ## Labels and legends
 
-**Two or more series always get a legend.** Never make a reader match colours from memory. **One series gets no legend.** A box with a single swatch would uselessly repeat the title.
+**Two or more series need a legend or a direct identity label on every series.** Never make a reader match colours from memory. Direct end labels may replace the legend when every series can be labelled clearly without collisions; otherwise use a legend. **One series gets no legend.** A box with a single swatch would uselessly repeat the title.
 
-Direct labels supplement the legend. They must be sparing:
+Direct labels must be sparing:
 
 - **Never a value on every point.** A number beside every dot or segment is noise and goes unread. Label the endpoint, the extreme, or the one series the chart is about. Let the axis, the legend and the tooltip carry the rest.
 - **Direct labels before gridlines. Gridlines before a second axis.** And there is never a second axis.

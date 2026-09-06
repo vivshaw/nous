@@ -1,5 +1,5 @@
 .worktrees/
-.gro/
+.loam/
 
 # Python toolchain
 .venv/

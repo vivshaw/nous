@@ -123,6 +123,11 @@ def test_a_multi_hue_ramp_fails_hue_stability() -> None:
     assert states(check_ramp(rainbow, "light", SURFACE, False))["Hue stability"] == "fail"
 
 
+def test_wrapped_endpoints_do_not_hide_an_interior_hue() -> None:
+    wrapped = ["#4f0030", "#008f80", "#ffb0c0"]
+    assert states(check_ramp(wrapped, "light", SURFACE, False))["Hue stability"] == "fail"
+
+
 def test_steps_too_close_together_fail() -> None:
     crowded = ["#7b36c1", "#7d39c4", "#5a2391"]
     assert states(check_ramp(crowded, "light", SURFACE, False))["Step separation"] == "fail"

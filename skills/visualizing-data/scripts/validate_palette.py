@@ -321,10 +321,10 @@ def check_ramp(palette: list[str], mode: str, surface: str, ordinal: bool) -> li
         )
     checks.append(("Pale end vs surface", pale_state, f"{pale} at {ratio:.2f}:1" + note))
 
-    hues = [oklch(c)[2] for c in palette]
-    spread = max(hues) - min(hues)
-    if spread > 180:
-        spread = 360 - spread
+    hues = sorted(oklch(c)[2] for c in palette)
+    gaps = [b - a for a, b in zip(hues, hues[1:], strict=False)]
+    gaps.append(hues[0] + 360 - hues[-1])
+    spread = 360 - max(gaps)
     checks.append(
         (
             "Hue stability",

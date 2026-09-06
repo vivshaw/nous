@@ -36,7 +36,7 @@ Ask freeform. Ask only for what the user hasn't already given you:
 - Constraints: regulatory, existing systems, deadlines, decisions already made?
 - Materials: URLs, file paths, prior research?
 
-Then check for `.gro/design-spec-guidance.md`. If it exists, read it and fold it in. It carries project-specific terminology, required or forbidden technologies, stakeholders, and conventions designs must follow. If it doesn't exist, say nothing and move on.
+Then check for `.loam/design-spec-guidance.md`. If it exists, read it and fold it in. It carries project-specific terminology, required or forbidden technologies, stakeholders, and conventions designs must follow. If it doesn't exist, say nothing and move on.
 
 ## Clarification
 
@@ -87,7 +87,7 @@ Stay at the level of boundaries and responsibilities. Function bodies and algori
 | "Requirements are clear, skip clarification" | Clarification is what makes them clear to *both* of you. |
 | "Simple idea, one approach is enough" | Two or three surface problems that one hides. It can go quickly. |
 | "I know this codebase" | You know a past state of it. Dispatch the researcher. |
-| "Project is empty — their other repos show the conventions" | The project boundary is the research boundary. Ask which conventions apply, or read `.gro/design-spec-guidance.md`. |
+| "Project is empty — their other repos show the conventions" | The project boundary is the research boundary. Ask which conventions apply, or read `.loam/design-spec-guidance.md`. |
 | "I'll research this inline, it's quick" | Inline research eats the context you need for the design. Delegate it. |
 | "Research found nothing on the first try" | Refine the query. Try different terms before escalating to the user. |
 | "I'll present the whole design at once" | Section-by-section validation catches wrong turns early. |

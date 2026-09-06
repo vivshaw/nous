@@ -61,7 +61,7 @@ Dashing reads as "projection" or "threshold".
 ✅ Solid 1px hairlines, one step off the surface.
 
 **❌ A number on every data point.**
-✅ A legend for two or more series. Direct labels only on the endpoint, the extreme, or the series the chart is about.
+✅ A legend or direct identity label for every series. Direct value labels only on the endpoint, the extreme, or the series the chart is about.
 
 **❌ A border drawn around marks to separate them.**
 ✅ The 2px surface gap between fills, and the 2px surface ring on overlapping markers.

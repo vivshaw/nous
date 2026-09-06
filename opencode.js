@@ -3,7 +3,7 @@ import { fileURLToPath } from "node:url"
 
 const skillsPath = path.join(path.dirname(fileURLToPath(import.meta.url)), "skills")
 
-export default async function GroPlugin() {
+export default async function LoamPlugin() {
   return {
     config(config) {
       config.skills ??= {}

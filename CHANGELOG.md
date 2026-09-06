@@ -6,22 +6,23 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
-## [6.0.0] - 2026-09-04
+## [6.0.0] - 2026-09-05
 
 ### Added
 
 - **skills:** `visualizing-data`, a comprehensive skill for data visualization, including a house palette, style guide, and accessibility checks.
 - **tooling:** A pinned Playwright browser for visual checks (`uv run playwright install chromium`).
 - **codex:** A native plugin manifest for Codex.
-- **opencode:** A dependency-free npm adapter that registers Gro's canonical skill path.
+- **opencode:** A dependency-free npm adapter that registers Loam's canonical skill path.
 
 ### Changed
 
-- **repo:** BREAKING: Gro is now one package containing one canonical root `skills/` tree for Claude Code, Codex, and OpenCode. Install `gro@gro` instead of separate marketplace plugins.
+- **repo:** BREAKING: Renamed Gro back to Loam. Claude Code and Codex users must re-add the marketplace as `vivshaw/loam` and install `loam@loam`; OpenCode users install `@vivshaw/loam`.
+- **repo:** BREAKING: Loam is now one package containing one canonical root `skills/` tree for Claude Code, Codex, and OpenCode. Install `loam@loam` instead of separate marketplace plugins.
 - **skills:** Merged `project-getting-started` into `project-writing-plan`, which now owns planning input selection and execution handoff.
 - **skills:** Implementation now offers a worktree, new branch, or current branch and preserves provenance-aware cleanup behavior.
-- **skills:** `using-gro` now explicitly answers “how do I use Gro?”
-- **skills:** Project materials moved from `.gro/tasks/` to `.gro/projects/`.
+- **skills:** `using-loam` now explicitly answers “how do I use Loam?”
+- **skills:** Project materials moved from `.gro/tasks/` to `.loam/projects/`. In-flight work is not migrated; move it by hand, or re-plan.
 - **skills:** TypeScript tooling guidance now covers stricter static analysis and TypeScript 7.
 - **skills:** Consolidated package creation and marketplace maintenance into `managing-a-skills-package`, which loads narrower authoring guidance only when needed.
 - **skills:** Portable implementer and review-fixer prompts now require complete scope delivery and load `writing-comments` when comments change.
@@ -29,7 +30,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 ### Fixed
 
 - **tooling:** `.venv` console scripts pointed at an outdated path, breaking local tools. Now regenerated.
+- **tooling:** Ramp validation now measures the circular hue span across every colour instead of only comparing endpoints.
 - **skills:** The implementer prompt now loads the existing `critique-verifying-completion` skill instead of a nonexistent verification skill.
+- **skills:** Project handoffs preserve dated plan directories, new in-place branches preserve local commits, and linked-worktree discard leaves other checkouts untouched.
 
 ### Removed
 

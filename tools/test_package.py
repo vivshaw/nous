@@ -63,6 +63,20 @@ def test_release_versions_are_synchronized() -> None:
     assert f"## [{version}]" in (ROOT / "CHANGELOG.md").read_text()
 
 
+def test_package_identity_is_synchronized() -> None:
+    package = load_json("package.json")
+    claude_plugin = load_json(".claude-plugin/plugin.json")
+    codex_plugin = load_json(".codex-plugin/plugin.json")
+    marketplace = load_json(".claude-plugin/marketplace.json")
+
+    assert package["name"] == "@vivshaw/loam"
+    assert claude_plugin["name"] == "loam"
+    assert codex_plugin["name"] == "loam"
+    assert marketplace["name"] == "loam"
+    assert {plugin["name"] for plugin in marketplace["plugins"]} == {"loam"}
+    assert marketplace["renames"]["gro"] == "loam"
+
+
 def test_distribution_shape_and_licenses() -> None:
     assert not any(path.is_file() for path in (ROOT / "plugins").glob("**/*"))
     assert not (ROOT / "agents").exists()

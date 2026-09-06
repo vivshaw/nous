@@ -1,6 +1,6 @@
 {
   # Python toolchain for skill resources and repository tools.
-  description = "python toolchain for gro";
+  description = "python toolchain for loam";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";

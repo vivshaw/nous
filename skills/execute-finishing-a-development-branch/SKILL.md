@@ -198,15 +198,13 @@ Wait for exact confirmation.
 
 If confirmed:
 
+**Normal checkout only:** move away from the branch or detached commit being discarded:
+
 ```bash
-PRIMARY_ENTRY=$(git worktree list --porcelain | awk '/^worktree / { sub(/^worktree /, ""); print; exit }')
-PRIMARY_ROOT=$(git -C "$PRIMARY_ENTRY" rev-parse --show-toplevel)
-cd "$PRIMARY_ROOT"
-# Normal checkout only. A linked worktree must not change another checkout.
 git checkout <base-branch>
 ```
 
-Then proceed to step 6.
+**Linked worktree:** do not change another checkout. Proceed directly to Step 6, which moves to the primary checkout before removing this worktree.
 
 ### Step 6: Worktree cleanup
 
@@ -214,10 +212,10 @@ Then proceed to step 6.
 
 **Worktrees only:** A normal checkout has nothing to release.
 
-**Gro-managed worktrees only:**
+**Loam-managed worktrees only:**
 
 - **A host-managed path** belongs to the host. Use its native worktree-exit capability. Don't reach for `git worktree remove`; you would be deleting state the host is still tracking.
-- **`.worktrees/` or `worktrees/`** is Gro's own, from the git fallback in `execute-setting-up-a-working-tree`.
+- **`.worktrees/` or `worktrees/`** is Loam's own, from the git fallback in `execute-setting-up-a-working-tree`.
 
 **If all 3 conditions above are true**, remove the worktree:
 
@@ -255,7 +253,7 @@ Detached HEAD has no branch to delete. Named-branch Options 2 and 3 keep the bra
 | Worktree path | Who removes it |
 |---|---|
 | Host-managed path | The host, via its native exit capability. Report and leave if that no-ops |
-| `.worktrees/`, `worktrees/` | Gro, via `git worktree remove` from the main repo root |
+| `.worktrees/`, `worktrees/` | Loam, via `git worktree remove` from the main repo root |
 | No worktree | Nothing to do |
 
 ## Common Mistakes

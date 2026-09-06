@@ -1,11 +1,11 @@
 ---
-name: using-gro
-description: Use when beginning work with Gro or when the user asks what Gro is, how it works, or which workflow to use.
+name: using-loam
+description: Use when beginning work with Loam or when the user asks what Loam is, how it works, or which workflow to use.
 ---
 
-# Using Gro
+# Using Loam
 
-Gro is a portable suite of workflow skills. Skills carry process knowledge that cannot be inferred from the current codebase, so check the host's available skills before acting or asking a clarifying question.
+Loam is a portable suite of workflow skills. Skills carry process knowledge that cannot be inferred from the current codebase, so check the host's available skills before acting or asking a clarifying question.
 
 ## Skill Selection
 
@@ -26,7 +26,7 @@ Examples:
 
 ## Delegation
 
-Gro names subagent capabilities rather than host-specific agent types. Honor the user's requested agent or model; otherwise choose the closest native subagent by capability. Prefer faster or cheaper tiers for bounded work and stronger reasoning for ambiguous design, adversarial review, or repeated failure.
+Loam names subagent capabilities rather than host-specific agent types. Honor the user's requested agent or model; otherwise choose the closest native subagent by capability. Prefer faster or cheaper tiers for bounded work and stronger reasoning for ambiguous design, adversarial review, or repeated failure.
 
 Every dispatch must state the task, boundaries, inputs, expected output, whether edits are allowed, and which prompts or skills to follow. If the host has no subagents, perform the work directly while preserving the same boundaries.
 
@@ -34,11 +34,11 @@ Every dispatch must state the task, boundaries, inputs, expected output, whether
 
 Briefly state which skill is guiding substantial work and why. Do not turn routine skill selection into ceremony.
 
-## Answering Questions About Gro
+## Answering Questions About Loam
 
 Keep the answer under 200 words:
 
-1. Gro is an opinionated collection of portable skills for planning, implementation, debugging, review, writing, and data visualization.
+1. Loam is an opinionated collection of portable skills for planning, implementation, debugging, review, writing, and data visualization.
 2. Skills are discovered by the host and loaded when their descriptions match the work; users rarely need to invoke one manually.
 3. The main workflow is research, plan, implement, review. It produces a short spec, a milestone plan, isolated implementation tasks, and review loops that continue until clean.
 

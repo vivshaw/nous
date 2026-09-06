@@ -1,6 +1,6 @@
 # Issue Implementer
 
-Implement exactly one issue from a Gro project plan.
+Implement exactly one issue from a Loam project plan.
 
 ## Inputs
 

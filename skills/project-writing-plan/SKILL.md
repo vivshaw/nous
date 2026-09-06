@@ -18,7 +18,7 @@ Executors are fresh subagents with no memory of this codebase. That's why the pl
 ## What you produce
 
 ```
-.gro/projects/YYYY-MM-DD-{slug}/
+.loam/projects/YYYY-MM-DD-{slug}/
   spec.md              # the design spec, already written
   plan.md              # shared context + milestones + progress
   issues/
@@ -35,13 +35,13 @@ Copy the adjacent `plan-template.md` to `plan.md` and `issue-template.md` for ea
 ```
 Question: "Which design spec should I plan?"
 Options:
-  - [list any design specs you find in .gro/projects/]
+  - [list any design specs you find in .loam/projects/]
   - "Let me provide the path"
 ```
 
-**The slug.** Everything after `YYYY-MM-DD-` in the spec's directory name: `oauth2-svc-authn` from `.gro/projects/2025-01-18-oauth2-svc-authn/spec.md`. It names the plan directory, and it **scopes every requirement identifier**: requirement `1.1` in the spec is cited as `{slug}.1.1`, which is what keeps IDs unique across repeated plan-and-execute rounds. It names the branch or worktree too.
+**The slug.** Everything after `YYYY-MM-DD-` in the spec's directory name: `oauth2-svc-authn` from `.loam/projects/2025-01-18-oauth2-svc-authn/spec.md`. It names the plan directory, and it **scopes every requirement identifier**: requirement `1.1` in the spec is cited as `{slug}.1.1`, which is what keeps IDs unique across repeated plan-and-execute rounds. It names the branch or worktree too.
 
-**Project guidance.** If `.gro/project-plan-guidance.md` exists, read it now and plan within it. It carries coding standards, testing requirements, review criteria, and quality gates this project expects. If it doesn't exist, say nothing and move on.
+**Project guidance.** If `.loam/project-plan-guidance.md` exists, read it now and plan within it. It carries coding standards, testing requirements, review criteria, and quality gates this project expects. If it doesn't exist, say nothing and move on.
 
 ## Step 1: Investigate, once
 
@@ -174,7 +174,7 @@ Validation is issue 03 — don't build it here.
 
 ## Step 5: Validate
 
-Use `critique-reviewing-code` over `plan.md` and every issue file, passing `.gro/project-plan-guidance.md` if it exists. Ask the independent reviewer to check:
+Use `critique-reviewing-code` over `plan.md` and every issue file, passing `.loam/project-plan-guidance.md` if it exists. Ask the independent reviewer to check:
 
 1. **Coverage** — every spec requirement in exactly one milestone or explicitly deferred; flag deferred P10s
 2. **Sufficiency** — could a fresh engineer execute each issue with only `plan.md` and that issue?
@@ -191,17 +191,17 @@ Get real paths and confirm the plan directory exists. Both commands must succeed
 
 ```bash
 git rev-parse --show-toplevel
-ls -d "<that>/.gro/projects/<date>-<slug>"
+ls -d "<that>/.loam/projects/<date>-<slug>"
 ```
 
 Then, substituting the verified path:
 
 ```
-Plan complete: [N] milestones, [M] issues in `.gro/projects/{slug}/`.
+Plan complete: [N] milestones, [M] issues in `.loam/projects/<date>-<slug>/`.
 
 **Start implementation in a fresh conversation or compacted context when possible. Copy this handoff first:**
 
-    Use the execute-implement-a-project skill for /abs/path/.gro/projects/{slug}/
+    Use the execute-implement-a-project skill for /abs/path/.loam/projects/<date>-<slug>/
 
 Then begin the fresh execution context and run the handoff.
 ```

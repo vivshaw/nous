@@ -52,13 +52,14 @@ Do these in order. Colour is step 3 for a reason — most bad charts start there
    surface gap between touching fills, hairline chrome, labels placed sparingly.
    → `references/marks.md`
 
-6. **Add the hover layer.** An HTML or SVG chart is interactive; a crosshair and
-   tooltip are part of the deliverable, not an enhancement. Only a bare stat tile is
-   exempt. → `references/interaction.md`
+6. **Add the hover layer.** A product HTML or SVG chart is interactive; a crosshair
+   and tooltip are part of the deliverable, not an enhancement. Only a bare stat tile
+   is exempt. The bundled reference sheet contains static mark specimens, not
+   deployable chart examples. → `references/interaction.md`
 
-7. **Make it readable without colour.** Two or more series always get a legend, four
-   or fewer also get direct labels, every chart has a table view, and dark mode uses
-   its own validated steps rather than an inverted filter.
+7. **Make it readable without colour.** Two or more series get either a legend or
+   direct labels identifying every series, every chart has a table view, and dark mode
+   uses its own validated steps rather than an inverted filter.
 
 8. **Render it and actually look at it.** The validator checks colour, not layout.
    Open the file or screenshot it, and look for collided labels, clipped text, and

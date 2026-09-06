@@ -1,5 +1,5 @@
 {
-  "name": "@vivshaw/gro",
+  "name": "@vivshaw/loam",
   "version": "6.0.0",
   "description": "Portable workflow skills for coding agents",
   "type": "module",
@@ -24,9 +24,9 @@
   "license": "CC-BY-SA-4.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vivshaw/gro.git"
+    "url": "git+https://github.com/vivshaw/loam.git"
   },
-  "homepage": "https://github.com/vivshaw/gro#readme",
+  "homepage": "https://github.com/vivshaw/loam#readme",
   "engines": {
     "node": ">=18"
   }

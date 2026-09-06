@@ -16,14 +16,14 @@ VIEWPORT = 1280
 INSTALL_HINT = (
     "no browser available - Playwright is installed, but the browser it drives is a "
     "separate download. Run `uv run playwright install chromium` once, "
-    "or set GRO_CHROME to a Chromium/Chrome executable"
+    "or set LOAM_CHROME to a Chromium/Chrome executable"
 )
 
 
 @pytest.fixture(scope="module")
 def browser() -> Any:
     """One isolated Chromium for this module.
-    `GRO_CHROME` overrides the pinned browser for environments where
+    `LOAM_CHROME` overrides the pinned browser for environments where
     Playwright's own installer can't run (NixOS, air-gapped).
     """
     try:
@@ -32,9 +32,9 @@ def browser() -> Any:
         pytest.skip(INSTALL_HINT)
 
     launch: dict[str, Any] = {"headless": True}
-    if override := (os.environ.get("GRO_CHROME") or "").strip():
+    if override := (os.environ.get("LOAM_CHROME") or "").strip():
         if not pathlib.Path(override).exists():
-            pytest.fail(f"GRO_CHROME points at a missing file: {override}")
+            pytest.fail(f"LOAM_CHROME points at a missing file: {override}")
         launch["executable_path"] = override
 
     with sync_playwright() as play:
@@ -104,6 +104,17 @@ def test_page_does_not_scroll_sideways(light) -> None:
     """Horizontal overflow is the most common generated-layout bug."""
     tab, _ = light
     assert tab.evaluate("document.documentElement.scrollWidth") <= VIEWPORT
+
+
+@pytest.mark.parametrize("width", [320, 375])
+def test_page_does_not_scroll_sideways_on_mobile(browser, width: int) -> None:
+    context = browser.new_context(viewport={"width": width, "height": 800})
+    try:
+        tab = context.new_page()
+        tab.goto(SHEET.resolve().as_uri(), wait_until="networkidle")
+        assert tab.evaluate("document.documentElement.scrollWidth") <= width
+    finally:
+        context.close()
 
 
 def test_inter_actually_loaded(light) -> None:

@@ -1,8 +1,8 @@
-# Developing Gro
+# Developing Loam
 
-Gro has one canonical `skills/` tree and thin package metadata for Claude Code, Codex, and OpenCode.
+Loam has one canonical `skills/` tree and thin package metadata for Claude Code, Codex, and OpenCode.
 
-Use Gro to develop Gro. Relevant authoring skills include `writing-skills`, `testing-skills-with-subagents`, `writing-agent-directives`, and `managing-a-skills-package`.
+Use Loam to develop Loam. Relevant authoring skills include `writing-skills`, `testing-skills-with-subagents`, `writing-agent-directives`, and `managing-a-skills-package`.
 
 ## Prerequisites
 
@@ -34,6 +34,6 @@ Canonical skill prose should name capabilities, not host-specific tool or agent 
 
 - Claude Code discovers root `skills/` through `.claude-plugin/plugin.json`.
 - Codex uses `.codex-plugin/plugin.json` and the same root tree.
-- OpenCode loads `@vivshaw/gro`; `opencode.js` appends the packaged `skills/` path to live config.
+- OpenCode loads `@vivshaw/loam`; `opencode.js` appends the packaged `skills/` path to live config.
 
 After changing `opencode.js`, restart OpenCode before testing because plugins are loaded at startup.

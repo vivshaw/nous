@@ -1,11 +1,11 @@
 {
-  "name": "gro",
+  "name": "loam",
   "version": "6.0.0",
   "description": "Portable workflow skills for research, planning, implementation, review, coding, prose, and data visualization",
   "author": {
     "name": "vivshaw"
   },
-  "homepage": "https://github.com/vivshaw/gro",
-  "repository": "https://github.com/vivshaw/gro",
+  "homepage": "https://github.com/vivshaw/loam",
+  "repository": "https://github.com/vivshaw/loam",
   "license": "CC-BY-SA-4.0"
 }

@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Gro data visualization reference</title>
+<title>Loam data visualization reference</title>
 <style>
 @font-face {
   font-family: "Inter";
@@ -199,9 +199,9 @@ h2 + p { font-size: 13px; line-height: 1.5; color: var(--viz-ink-2);
 h3 { font-size: 13px; font-weight: 600; margin: 28px 0 10px; color: var(--viz-ink-2); }
 
 .card { background: var(--viz-surface); border: 1px solid var(--viz-grid);
-  border-radius: 12px; padding: 20px 22px 22px; }
+  border-radius: 12px; min-width: 0; padding: 20px 22px 22px; }
 .grid2 { display: grid; gap: 20px; align-items: start;
-  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); }
+  grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr)); }
 .chart-title { font-size: 16px; font-weight: 600; margin: 0; }
 .chart-sub { font-size: 13px; line-height: 1.45; color: var(--viz-ink-2); margin: 4px 0 16px; }
 figure { margin: 0; }
@@ -287,11 +287,21 @@ text { font-family: inherit; }
   background: var(--viz-surface); border: 1px solid var(--viz-grid); }
 .badges { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 4px; }
 table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.table-scroll { overflow-x: auto; }
 th, td { text-align: right; padding: 7px 10px; border-bottom: 1px solid var(--viz-grid);
   font-variant-numeric: tabular-nums slashed-zero; }
 th:first-child, td:first-child { text-align: left; font-variant-numeric: normal; }
 th { font-weight: 600; font-size: 11px; color: var(--viz-ink-muted); }
 td { color: var(--viz-ink-2); }
+@media (max-width: 600px) {
+  body { padding: 0 14px 64px; }
+  header { padding-top: 36px; }
+  h2 { margin-top: 44px; }
+  .card { padding: 16px; }
+  .sw-row { grid-template-columns: 28px minmax(0, 1fr); gap: 6px 10px; }
+  .sw-hex, .sw-note { grid-column: 2; }
+  .type-row { grid-template-columns: 1fr; gap: 6px; }
+}
 </style>
 </head>
 <body>
@@ -299,7 +309,7 @@ td { color: var(--viz-ink-2); }
 
 <header>
   <div>
-    <h1>Gro data visualization reference</h1>
+    <h1>Loam data visualization reference</h1>
     <p class="lede">Every colour, the type scale, and several worked examples.</p>
   </div>
   <button class="toggle" id="themeToggle" type="button">Switch to dark</button>
@@ -406,7 +416,8 @@ Meters may be used for percentages and targets.</p>
 <h2>Charts</h2>
 <p>Follows these mark specs: bars capped at 24px with a rounded data end, 2px lines,
 a 2px surface gap between touching fills, hairline gridlines, and labels placed
-sparingly.</p>
+sparingly. These are static construction specimens, not production interaction
+examples; product charts also need the hover, keyboard, and table layers in the skill.</p>
 
 <div class="grid2">
   <figure class="card">
@@ -676,7 +687,7 @@ sparingly.</p>
     <p class="chart-title">The table view</p>
     <p class="chart-sub">Every chart ought to have one. A table makes the numbers easy to grok
       without a pointer, screen, or colour vision.</p>
-    <table>
+    <div class="table-scroll"><table>
       <thead><tr><th>Region</th><th>Direct</th><th>Partner</th><th>Marketplace</th><th>Other</th></tr></thead>
       <tbody>
         <tr><td>Europe</td><td>42%</td><td>26%</td><td>18%</td><td>14%</td></tr>
@@ -684,7 +695,7 @@ sparingly.</p>
         <tr><td>Asia-Pacific</td><td>31%</td><td>34%</td><td>22%</td><td>13%</td></tr>
         <tr><td>Latin America</td><td>24%</td><td>28%</td><td>30%</td><td>18%</td></tr>
       </tbody>
-    </table>
+    </table></div>
   </figure>
 </div>
 

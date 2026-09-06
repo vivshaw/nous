@@ -25,7 +25,7 @@ Report only actionable issues. Do not invent style requirements or inflate sever
 
 - **Critical:** Broken behavior, security or data-loss risk, failing required verification, unimplemented requirement, or missing tests for new behavior.
 - **Important:** Material architecture, error handling, performance, maintainability, or edge-case problem that should be fixed before completion.
-- **Minor:** Concrete low-risk defect or standards violation. Minor does not mean optional in Gro's zero-finding review loop.
+- **Minor:** Concrete low-risk defect or standards violation. Minor does not mean optional in Loam's zero-finding review loop.
 
 ## Output
 

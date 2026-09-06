@@ -1,6 +1,6 @@
 # Interaction
 
-An HTML or SVG chart should be interactive. The hover layer is part of the deliverable. The only form that ships without one is a bare stat tile with no plot.
+An HTML or SVG chart should be interactive. The hover layer is part of the deliverable. The only product form that ships without one is a bare stat tile with no plot. The bundled reference sheet is a static construction specimen: it demonstrates marks, spacing, and colour, not production interaction. Do not copy that omission into a product chart.
 
 ## Tooltips and hover
 
