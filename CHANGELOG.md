@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+## [7.0.0] - 2026-09-06
+
 ### Added
 
 - **repo:** A portable Agent Plugins manifest for clients that implement the open package format.
@@ -17,7 +19,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ### Removed
 
-- **repo:** BREAKING: Moved the agent-related a separate Loam Meta expansion pack.
+- **repo:** BREAKING: Moved the seven skill-authoring and project-context skills to the separate Loam Meta expansion pack. Install Loam Meta to continue using them.
 
 ## [6.0.0] - 2026-09-05
 

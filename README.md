@@ -69,7 +69,7 @@ Every skill and its supporting resources live under `skills/`.
 
 ## Expansion Packs
 
-[Loam Meta](https://github.com/vivshaw/loam-meta) provides the authoring skills for agent directives, Agent Skills, portable packages, marketplaces, and `AGENTS.md` maintenance. It installs independently and is also listed in Loam's Claude Code and Codex marketplaces.
+[Loam Meta](https://github.com/rhizomatous/loam-meta) provides the authoring skills for agent directives, Agent Skills, portable packages, marketplaces, and `AGENTS.md` maintenance. It installs independently and is also listed in Loam's Claude Code and Codex marketplaces.
 
 ## The `.loam` directory
 

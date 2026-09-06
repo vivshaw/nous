@@ -20,7 +20,7 @@
       "name": "loam-meta",
       "source": {
         "source": "url",
-        "url": "https://github.com/vivshaw/loam-meta.git"
+        "url": "https://github.com/rhizomatous/loam-meta.git"
       },
       "policy": {
         "installation": "AVAILABLE",

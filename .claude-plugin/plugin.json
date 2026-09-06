@@ -1,6 +1,6 @@
 {
   "name": "loam",
-  "version": "6.0.0",
+  "version": "7.0.0",
   "description": "Portable workflow skills for research, planning, implementation, review, coding, prose, and data visualization",
   "author": {
     "name": "vivshaw"
